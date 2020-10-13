@@ -1975,14 +1975,84 @@ It is achieved through uniform experimental units, careful conduct of all operat
 \textbf{reduces sampling error}
 
 \subsubsection{Replication}
-The sampling error is the quantified uncertainty. A statement is of no value without a statement of uncertainty in the estimate. It allows interpolationg patterns to a whole population.
+The sampling error is the quantified uncertainty. A statement is of no value without a statement of uncertainty in the estimate. It allows interpolationg patterns to a whole population. It minimizes the risk of confounding effects and uncontrolled variation
 \begin{figure}[h]
 \centering
 \includegraphics[width = 0.45\textwidth]{exp-design/replication.png}
 \includegraphics[width = 0.45\textwidth]{exp-design/replication2.png}
 \caption{red arrow: standard error}
 \end{figure}
-It minimizes the risk of confounding effects and uncontrolled variation
+
+\textbf{Problems with a small n:} \\
+low statistical power, inflated false discovery rate, inflated effect size estimation, and most importantly, low reproducibility!
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.5\textwidth]{exp-design/small-n.png}
+\caption{At n = 100: differnce between means -0.5. n = 5: difference in means -1.3, here the data skewness is most problematic.}
+\end{figure}
+
+Replicaiton must be \textbf{independent}, this means that every treatment must be applied to multiple independent experimental units, not just the number of units used! See Figure \ref{flowers} with different flower configurations in different chambers.
+\begin{figure}[h]
+\centering
+\label{flowers}
+\includegraphics[width = 0.2\textwidth]{exp-design/replicationplant.png}
+\includegraphics[width = 0.75\textwidth]{exp-design/replicationplants2.png}
+\includegraphics[width = 0.8\textwidth]{exp-design/replicationplants6.png}
+\caption{n in different configurations of experiments with flowers growing in different chambers.}
+\end{figure}
+
+\textbf{Pseudoreplication} \\
+This occurs whenever individual measurements are not independent but are analyzed as if they are independent of one another. Non-independence makes observations more similar to tone another and thus violated assumptions of most statistical models.\par 
+Mixed-effect models are good for accounting for non-independence of replicates, e.g. 15 measurements from 10 diabetes patients give you 150 observations but just 10 independent subjects. This can be analyzed by fitting the patient as a random factor or using repeated measures ANOVA.\par 
+
+\textbf{Example 1}\\
+see which song a female bird prefers, a complex one or a simple one (sung by two different males). Playback each type of song to 40 females and see how they respond.\par 
+This is problematic because the females might prefer one male's voice over the other instead of the complexity ($\rightarrow$ get multiple complex/simple songs from different males)\par 
+\vspace{0.35cm}
+\noindent
+Good experiments are comparative (compare to control group, replicate to rule out significant effects occuring only by chance).\\
+Be aware of bias (are genotypes different...)\\
+Generalize the experiment (plant growth not only at 20 and 25 degrees, but more steps and higher range, take different genotypes into accound...)\\
+
+\subsection{Stratification or 'Blocking'}
+Grouping of experimental units that have similar properties. Whithing each block, treatments are randomly assigned to experimental units. Ised to account for extraneous variation by dividing the experimental units into groups (called blocks or strata) that share common features. Essentially repeats the same completely randomized experiment several times (treatment effects analyzed whithin each block).\par 
+A block can be:
+\begin{itemize}
+\item Field plots experiencing similar local conditions
+\item animals from the same litter
+\item Patients attending the same clinic
+\item Runs of an experiment executed on the same day
+\item illuma lanes on which samples are sequenced
+\end{itemize}
+Example:
+The greenhouse fits too few plants for a a large scale experiment, multiples sets have to be measured over 6 months to get a high enough replication.
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.9\textwidth]{exp-design/greenhouse1.png}
+\includegraphics[width = 0.9\textwidth]{exp-design/greenhouse2.png}
+\caption{A, B = genotypes, blue = 20C, orange = 25C. First image: confounding variables of month and genotype. Can be solged by 2: randomized block design. Month is now a blocking factor $\rightarrow$ the whole experiment is now replicated within each month. Genotype and temperature factors are balanced within each month.}
+\end{figure}
+
+\subsubsection{Randomizing and blocking}
+It is bestito fix a variable if possible. e.g. use a single genotype if individual variation is to be minimized. If that is not possible, block (see months above). If that is not possible, randomize. A block needs to be recorded and accounted for in a model!\par 
+
+\subsubsection{Aim for a balanced design}
+A design is balanced when there are equal numbers of replicates at all levels of all conditions. The second major way to reduce the influence of sampling error on estimation and hypothesis testing. SE \textcolor{red}{what does that stand for?} of the differences between the means is smalles when ($1/n_1 + 1/n_2$)is smallest
+\begin{equation*}
+\begin{split}
+& n_1 = n_2 = 10 \;\;\; \Rightarrow \;\;\; ( \frac{1}{10} +\frac{1}{10} ) = 0.2 \\
+& n_1 = 19,\; n_2 = 1 \;\;\; \Rightarrow \;\;\;(\frac{1}{19} + \frac{1}{1})= 1.05
+\end{split}
+\end{equation*}
+This helps with robustnes against assumptions about the distributions of the populations. Problems with non-normality and unequal variabces matter less with balanced designs.
+
+\subsubsection{Factorial designs}
+Investigates all treatment combinations of two or more variables. When we are interested in effects of multiple treatments, or factors, and their interactive effects, for example genotype-by-environment interactions
+
+\subsection{Summary}
+Experiments need to be designed well in order to eliminate bias and reduce sampling error when estimating the effects of one variable on another. Good design and good analyssis can lead to reduced samle sizes (saves money, time and \textit{animal lives})
+
 
 \end{document}
 

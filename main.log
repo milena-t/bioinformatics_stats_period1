@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  13 OCT 2020 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  13 OCT 2020 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -642,41 +642,90 @@ Package pdftex.def Info: exp-design/replication2.png  used on input line 1982.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[52 <./exp-design/random-sampling.png>] [53 <./exp-design/replication.png> <./e
-xp-design/replication2.png>] (./main.aux) ) 
+<exp-design/small-n.png, id=253, 457.71pt x 553.06625pt>
+File: exp-design/small-n.png Graphic file (type png)
+<use exp-design/small-n.png>
+Package pdftex.def Info: exp-design/small-n.png  used on input line 1991.
+(pdftex.def)             Requested size: 234.87749pt x 283.80695pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<exp-design/replicationplant.png, id=254, 346.29375pt x 259.97125pt>
+File: exp-design/replicationplant.png Graphic file (type png)
+<use exp-design/replicationplant.png>
+Package pdftex.def Info: exp-design/replicationplant.png  used on input line 19
+99.
+(pdftex.def)             Requested size: 93.94955pt x 70.53035pt.
+<exp-design/replicationplants2.png, id=255, 1000.73875pt x 363.3575pt>
+File: exp-design/replicationplants2.png Graphic file (type png)
+<use exp-design/replicationplants2.png>
+Package pdftex.def Info: exp-design/replicationplants2.png  used on input line 
+2000.
+(pdftex.def)             Requested size: 352.31624pt x 127.91997pt.
+<exp-design/replicationplants6.png, id=256, 1036.87375pt x 371.3875pt>
+File: exp-design/replicationplants6.png Graphic file (type png)
+<use exp-design/replicationplants6.png>
+Package pdftex.def Info: exp-design/replicationplants6.png  used on input line 
+2001.
+(pdftex.def)             Requested size: 375.80542pt x 134.6061pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[52 <./exp-design/random-sampling.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2013--2017
+
+ []
+
+<exp-design/greenhouse1.png, id=261, 1114.1625pt x 245.91875pt>
+File: exp-design/greenhouse1.png Graphic file (type png)
+<use exp-design/greenhouse1.png>
+Package pdftex.def Info: exp-design/greenhouse1.png  used on input line 2032.
+(pdftex.def)             Requested size: 422.77661pt x 93.315pt.
+<exp-design/greenhouse2.png, id=262, 1115.16624pt x 231.86626pt>
+File: exp-design/greenhouse2.png Graphic file (type png)
+<use exp-design/greenhouse2.png>
+Package pdftex.def Info: exp-design/greenhouse2.png  used on input line 2033.
+(pdftex.def)             Requested size: 422.77661pt x 87.90134pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[53 <./exp-design/replication.png> <./exp-design/replication2.png>] [54 <./exp-
+design/small-n.png>] [55 <./exp-design/replicationplant.png> <./exp-design/repl
+icationplants2.png> <./exp-design/replicationplants6.png> <./exp-design/greenho
+use1.png> <./exp-design/greenhouse2.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6504 strings out of 480478
- 87268 string characters out of 5905958
+ 6541 strings out of 480478
+ 88351 string characters out of 5905958
  577379 words of memory out of 5000000
- 22392 multiletter control sequences out of 15000+600000
+ 22423 multiletter control sequences out of 15000+600000
  539987 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,19n,40p,762b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvi
-ps/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt
-0900.pfb>
-Output written on main.pdf (53 pages, 2847370 bytes).
+{/usr/share/texmf-dist/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/font
+s/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sftt0900.pfb>
+Output written on main.pdf (55 pages, 3049287 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
+ 356 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
