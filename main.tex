@@ -9,6 +9,7 @@
 \usepackage{multirow}
 \usepackage{wrapfig}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{float}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -1976,7 +1977,7 @@ It is achieved through uniform experimental units, careful conduct of all operat
 
 \subsubsection{Replication}
 The sampling error is the quantified uncertainty. A statement is of no value without a statement of uncertainty in the estimate. It allows interpolationg patterns to a whole population. It minimizes the risk of confounding effects and uncontrolled variation
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width = 0.45\textwidth]{exp-design/replication.png}
 \includegraphics[width = 0.45\textwidth]{exp-design/replication2.png}
@@ -1986,14 +1987,14 @@ The sampling error is the quantified uncertainty. A statement is of no value wit
 \textbf{Problems with a small n:} \\
 low statistical power, inflated false discovery rate, inflated effect size estimation, and most importantly, low reproducibility!
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width = 0.5\textwidth]{exp-design/small-n.png}
 \caption{At n = 100: differnce between means -0.5. n = 5: difference in means -1.3, here the data skewness is most problematic.}
 \end{figure}
 
 Replicaiton must be \textbf{independent}, this means that every treatment must be applied to multiple independent experimental units, not just the number of units used! See Figure \ref{flowers} with different flower configurations in different chambers.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \label{flowers}
 \includegraphics[width = 0.2\textwidth]{exp-design/replicationplant.png}
@@ -2027,7 +2028,7 @@ A block can be:
 \end{itemize}
 Example:
 The greenhouse fits too few plants for a a large scale experiment, multiples sets have to be measured over 6 months to get a high enough replication.
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width = 0.9\textwidth]{exp-design/greenhouse1.png}
 \includegraphics[width = 0.9\textwidth]{exp-design/greenhouse2.png}
@@ -2047,12 +2048,200 @@ A design is balanced when there are equal numbers of replicates at all levels of
 \end{equation*}
 This helps with robustnes against assumptions about the distributions of the populations. Problems with non-normality and unequal variabces matter less with balanced designs.
 
+
 \subsubsection{Factorial designs}
 Investigates all treatment combinations of two or more variables. When we are interested in effects of multiple treatments, or factors, and their interactive effects, for example genotype-by-environment interactions
 
 \subsection{Summary}
 Experiments need to be designed well in order to eliminate bias and reduce sampling error when estimating the effects of one variable on another. Good design and good analyssis can lead to reduced samle sizes (saves money, time and \textit{animal lives})
 
+\vfill
+
+\section{Genome Wide association studies (GWAS), ways to control for multiple testing}
+\subsection{association mapping}
+Associate a Phenotype to a position in the genome. This can be accomplished with the help of:
+\begin{itemize}
+\item SNPs: single nucleotid polymorphism (most of the time)
+\item Insertions or deletions 
+\item CNVs: copy number variations
+\item Epigeneitc markers
+\end{itemize}
+These variations can be used to tie the genetic marker to a phenotype variation. Identifying large amounts of associations efficiently is a problem, but necessary.
+
+\subsection{Quantitative traits}
+Assuming the Phenotype is quantitative and additive, it can be modeled as a linear regression model with the sum over the predicted variables:
+\begin{equation*}
+y_i \;\; = \;\; \beta_0 + \sum^m_{j=1} x_{i, j} \; \beta _i +\epsilon_i
+\end{equation*}
+assume we analyze a SNP dataset, where each sequence is associated with its phenotype (the genotypes are assued to be fixed)
+\begin{itemize}
+\item $y_i$ is the phenotype of the $i^{th}$ individual (dependent variable)
+\item $\beta _0$ is the mean/intercept
+\item $x_{i,j}$ is the genotype of the $i^{th}$ individual and the $j^{th}$ SNP variant
+\item $\beta_j$ is the effect size of the $j^{th}$ variant (estimated regression coefficient)
+\item $\epsilon_i$ is the error or noise term of the $i^{th}$ individual (usually assumed to be independent and gaussian distributed.
+\end{itemize}
+A t-test can be used to test whether there is a significant effect. (an equivalent F-test is also possible)
+\begin{equation*}
+t = \frac{\hat{\beta}_j}{S E _{\hat{\beta}_j}} \;\;\; where \;\;\; \hat{\beta}_j = \frac{\sum^n _{i=1} x_{ij} \; y_i}{\sum^n _{i=1} x_{ij}^2}
+\end{equation*}
+
+$\hat{\beta}_j$ is the regression coefficient, aka the least square estimate (the result of the linear regression where sums of squares is to be minimized). $t$ is here basically the regression coeffitient $\hat{\beta}_j$ divided by the standard of that regression coefficient $SE_{\hat{\beta}_j}$.\par 
+Effects of other markers are explicitely ignore. Most GWAS for quantitative traits are conducted using this (or an equivalent) statistic.\par 
+
+With a t-test statistic we can obtain the p-value (the probability that $t$  or a more extreme value is observed under the null hypothesis ($H_0$ is that the marker has no effect, which means that $\beta_j = 0$)
+\begin{equation*}
+P(T \geq t|H_0) = p-value
+\end{equation*}
+
+\subsection{principle of an association study}
+\textbf{example} Measure phenotypes of flowers and sequence their SNPs (four different ones here)
+\begin{table}[H]
+\centering
+\caption{0 = homocygous (homozygot) for the most common allele, 1 = heterocygous for the more and less common allele, 2 = homocygous for the rare allele.}
+\begin{tabular}{c|c|c|c|c|c}
+& number of flowers & SNP1 & SNP 2 & SNP 3 & SNP 4 \\
+\hline
+A1 & 8 & 1 & 2 & 0 & 1 \\
+\hline 
+A2 & 9 & 1 & 0 & 0 & 2 \\
+\hline
+A3 & 12 & 2 & 2 & 2 & 1 \\
+\hline 
+A4 & 6 & 0 & 1 & 1 & 0 \\ 
+\hline
+A5 & 17 & 2 & 2 & 1 & 1 \\
+\hline
+A6 & 4 & 0 & 2 & 2 & 1 
+\end{tabular}
+\end{table}
+Do some of the slips associate with the number of flowers the plant produces? use a linear regression framework: the genotype is the dependant variable.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 0.6\textwidth]{gwa/arabidopsis-lm.png}
+\includegraphics[width = 0.29\textwidth]{gwa/arabidopsis-lm2.png}
+\caption{linear model with flower number and SNPs. for SNP1 there seems to be a more significant statistic association than for the others}
+\end{figure}
+
+Usually there are way more than 4 tests, this means that the model needs to be corrected for multiple testing. a 5\% significance threshold ($\alpha$) is used.
+
+\subsubsection{Bonferroni correction}
+assume that each locus/marker is independent from all others. A conservative bound on the probability of rejecting the null hypothesis for rejecting one or more markers for a given significance threshold $\alpha$.
+\begin{equation*}
+1-P(T_1 \leq t, ..., T_m \leq t|H_0) \leq \alpha
+\end{equation*}
+
+
+\subsubsection{Family wise error rate (FWER)}
+
+\renewcommand{\arraystretch}{1.75}
+\begin{table}[H]
+\centering
+\caption{Truth vs. significant and non-significant effects and second table for multiple hypothesis tests. R is the total number of significant tests, m is the total number of all tests. $m_0$ is the number of true null-hypothesis tests.}
+\begin{tabular}{c|c|c}
+Truth & Non-significant & Significant \\
+\hline
+$H_0$ & True negative (U) & Type I error (V) \\
+\hline 
+$H_A$ &Type II error (T) & True positive (S)
+\end{tabular}
+\begin{tabular}{c c}
+                             \hspace{10cm}    &                                            
+\end{tabular}
+
+\begin{tabular}{c|c|c|c}
+Truth & Non-significant & Significant \\
+\hline
+$H_0$ & U & V & $m_0$ \\
+\hline 
+$H_A$ &T & S & $m-m_0$ \\
+\hline 
+& m-R & R &m
+
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+The Family wise error rate is the probability of at least one type I error (V) $FWER = P(v \geq 1)$.
+There are two controls of the FWER 
+\begin{itemize}
+\item assuming that all $H_0$ are true, control the complete error rate $FWEc(complete \; null) = P(V \leq 1 |H_0 ^c true) $ which assumes $H_0 ^c = [H_0 ^1, H_0^2, ..., H_0 ^m]$
+\item control the partial FWER $FWEc(partial \; null) = P(V \leq 1 |H_0 ^c true) $
+\end{itemize}
+This allows for stronger or weaker controls.\par 
+If there are $m = 2$ tests with two null-hypotheses $H_0 ^1, H_0^2$, there are four partial null scenarios: both $H_0$ are true, only one of them is, or none is. if the FWER is to be controlled, this means that the type-I error rate is to be controlled.
+
+\subsubsection{False discovery rate}
+
+See second table in FWER (errors for multiple Hypothesis tests). Here the fraction of Type I errors out of the total number of significant discoveries. an expected rate of false positives. $$FDR = E\left( \frac{V}{R}\right) $$
+Only if all null-hypothesis are true, this is equal to the FWER (otherwise not!). As false positives increas, true positive will also increase.
+
+Control for the FDR through the Benjamini Hochberg procedure (B-H Procedure):
+\begin{itemize}
+\item The p-values are obtaines and ordered $$p_{(1)} \leq ... \leq p_{(m)}$$ with the corresponding null hypotheses $H_0^{(1)} , ..., H_0^{(m)}$.
+\item k (critical number by which the hypotheses are rejected) is defined as follows: 
+\begin{equation*}
+k = \max \Big\{ i: p_{(i)} \leq \frac{i}{m}q \Big\}
+\end{equation*}
+each p-value is compared, find the threshold of p-values $p_{(k)}$ where it is just smaller than $\frac{i}{m}q$. each null hypothesis $H_0^{(1)} , ..., H_0^{(k)}$ can then be rejected.
+\end{itemize}
+
+\subsubsection{Example}
+\textbf{Bonferroni correction in practice:} $m = 10$, $\alpha = 0.05$ \\
+estimate FWEC: $$1-(1-\alpha)^m \; = \; 0.4$$
+Not controlling the FWER on 10 tests gives a 40\% error rate. schould be lower! This can be corrected by using $\frac{a}{m}$ instead of $\alpha$, which gives $$1-(1-\alpha)^{\alpha/m} \; = \; 0.4$$
+The FWER is much smaller now, The bonferroni corrections lets us correct the FWER at a specified $\alpha$.
+
+\noindent
+\textbf{FDR correction in practice (B-H):}\\
+\begin{table}[H]
+\centering
+\caption{p-values and the t-value vector from the false discovery rate $\frac{i}{m}q$.}
+\begin{tabular}{c|c}
+p-values & 0.001 0.012 0.014 0.122 0.245 0.320 0.550 0.776 0.840 0.995\\
+\hline
+t-calculation & 0.005 0.010 0.015 0.020 0.025 0.030 0.035 0.040 0.045 0.050\\
+\end{tabular}
+\end{table}
+For the comparison (see FDR equation) a new $\alpha = 0.05 \frac{i}{10}$ value is used. This means k = 3 since $p_{(3)} = 0.014 \leq 0.015$, so $H_0^{(1)} , H_0^{(2)},  H_0^{(3)}$ can be rejected. Even though the p-value of the second one is lower than the corrected alpha. For the Bonferroni correction only $H_0^{(1)}$ would be rejected.
+
+Which correction should be used?\\
+Depends on the question and the data: drug development is very strict -> needs very low Type-I error. 
+
+\subsubsection{Using the Association mapping}
+in reality, a lot of SNPs are tested, but you cant show so many regression plots. The outcome is visualized with manhattan plots.
+\begin{figure}[H]
+\centering
+\includegraphics[width = 0.7\textwidth]{gwa/manhattan.png}
+\caption{Manhattan plot. Each point is the p-value from a linear regression. Higher on the axis the smaller is the p-value (the higher the association). The red line is the genome-wide significance threshold (can be obtained through controlling the FWER or FDR)}
+\end{figure}
+The next step would be to look up which genes are on the places with significance.
+
+\subsection{Linkage disequilibrium (LD)}
+Not the whole genome is available, it is very unlikely that the Causative locus is actually in the subsample that was evaluated.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 0.6\textwidth]{gwa/linkage-equilibrium.png}
+\caption{visualization of how the correlation between the marker locus in the subsample and the phenotype can occur.}
+\end{figure}
+How strong is the correlation between the Typed marker locus and the causative locus (so called linkage disequilibrium)? This makes it possible to detect the indirect association. Neighbouring markers (physical closeness) will likely be inherited together, causing linkage disequilibrium (LD) between the two markers. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 0.5\textwidth]{gwa/ld-plot.png}
+\caption{Linkage Disequilibrium plot, see cursor, region of very high LD. LD can also extend across chromosomes (see enlarged area)}
+\end{figure}
+The LD stucture of the genome is useful, because you don't have to tag every SNP, it is possible to design SNPs that tag the structure of larger haplotype blocks (because many snips in e.g. the red area would be redundant, you don't need many SNPs to describe the variation/change).
+
+\subsection{confounding in GWAS}
+Confounding factors can influence the result and can be controlled for.
+\subsubsection{population structure}
+One population lives kind of secluded in one area which leads to reduced gene-flow and can lead to differences in allele-frequencies to other populations.\\
+\textbf{population:} collection of individuals (typically within a restricted geographical area) that have a non-zero probability to inbreed.\\
+
+\LARGE{\textcolor{red}{Continue with the second recording}}
 
 \end{document}
 
