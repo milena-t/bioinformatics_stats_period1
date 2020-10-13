@@ -84,7 +84,7 @@ $$\sigma^2 = \frac{\sum(x-\mu)^2}{N} \: \: \: \: \: \: \;\;\;\;\;\;\;\; s^2 = \f
 the n-1 in the sample variance is a correction factor to account for the error caused by the sample potentially not being representative (can be analytically proven). The standard deviation is the square root of the variance.
 
 \subsubsection{t-test} \label{ttest}
-Two sample t-test for independent samples:requires smapp saple sizes and data that is probably normally distributed. A and B are samples of distinct groups, the test determines whether they doffer statistically significantly or whether the differences are a result of chance.
+Two sample t-test for independent samples:requires small sample sizes and data that is probably normally distributed. A and B are samples of distinct groups, the test determines whether they doffer statistically significantly or whether the differences are a result of chance.
 $$t = \frac{(\bar{x}_{A} - \bar{x}_{B})}{\sqrt{\frac{s_{A}^2}{n_{A}} + \frac{s_{B}^2}{n_{B}}}}$$
 t is the difference in population means divided by the difference between individuals within populations. The uncertainty in the estimate of group differences depends on uncertainty in the estimates of group means.\par 
 From the result of the t-test the actual p-value can be looked up in a table, it can then be determined whether $H_0$ (the samples are the same and all variation is only a result of chance) is to be accepted or rejected.\\
@@ -206,7 +206,7 @@ sqrt(var(Bio)/2000 + var(Tech)/2000)
 [1] 0.04993436
 \end{lstlisting}
 It's always better to increase biological replication in terms of statistical power (the precision of the estimate is better). However, the difficulty and effort in doubling the sampling size is not always worth it, and it would be more economic to increase the technical replication.\par
-\textbf{What if the data is not normally distributed?} Sometimes log-transforming works well (from poisson to log). If it soes not, a generalized linear model should be fitted using a different distribution (poisson or negative binomial)
+\textbf{What if the data is not normally distributed?} Sometimes log-transforming works well (from poisson to log). If it does not, a generalized linear model should be fitted using a different distribution (poisson or negative binomial)
 
 \subsection{analysis of frequencies in R}
 The genotype for a trait is measured in two different populations. Alleles in population 1: 0.40AA, 0.055Aa, 0.05aa. Population 2: 0.80AA, 0.19Aa, 0.01aa. With the Hardy-Weinberg equilibrium (HWE) it can be testet whether there is selection on the locus in each population. The principle states: \textit{allele and genotype frequencies in a population will remain constant from generation to generation in the absence of other evolutionary influences} (wikipedia). $HWE = p^2+2pq+q^2$. These are the expected genotype frequencies with random mating and no selction, and it is tested whether the data deviates from them. We calculate the expected number of genotypes knowing we have sampled 2000 alleles in total from each population.\\
@@ -525,7 +525,7 @@ Residual standard error: 2.387 on 72 degrees of freedom
 Multiple R-squared:  0.1289,	Adjusted R-squared:  0.09259 
 F-statistic: 3.551 on 3 and 72 DF,  p-value: 0.01855
 \end{lstlisting}
-Now, there are the effect of gender and diet in the same model. There are two null-hypotheses now: Men and women loose the same amount of weight, and that all three diets are the same. From the model above we can conclude thet there is no significant difference between men and women, $H_0(1)$ is accepted, but there is still a significant difference between diet C and the others, so $H_0_(2)$ is rejected.\par
+Now, there are the effect of gender and diet in the same model. There are two null-hypotheses now: Men and women loose the same amount of weight, and that all three diets are the same. From the model above we can conclude then there is no significant difference between men and women, $H_0(1)$ is accepted, but there is still a significant difference between diet C and the others, so $H_0(2)$ is rejected.\par
 \begin{lstlisting}
 plot(mod2a)
 \end{lstlisting}
@@ -1226,7 +1226,7 @@ A very high F-value means food seens to have a significant effect (explains a lo
 \textbf{Degrees of freedom for the food effect:} The number of levelsof the factor -1.\\
 \textbf{Degrees of freedom for the residuals:} number of observarions - number of effects estimated. \\
 Ad for the standerd ANOVA, there is an F-value (var(effect)/var(error)), which, based on the corresponding degrees of freedom, gives the p-value for a combined response to food treatment of all traits considered together.\\
-\textbf{right hand side of the MANOVS table:} Denominator DF $\sim$ roughly how many observations you have for the effect. Numberator DF $\prop$ number of estimated means.\par 
+\textbf{right hand side of the MANOVS table:} Denominator DF $\sim$ roughly how many observations you have for the effect. Numberator DF $\sim$ number of estimated means.\par 
 More complex models can be fitted with random and nested effects (like the flower pot example). This is shown by including population and considering that populations can respond differently to the food treatment:
 
 \begin{lstlisting}
@@ -1305,7 +1305,7 @@ variation in the dataset. Where your initial variables are strongly
 correlated with one another, you will be able to approximate most of the
 complexity in your dataset with just a few principal components.”}
 \end{center}
-\end{small} \\
+\end{small} 
 PCA will be shown using the america crime dataset, this time loading it with \texttt{read.table()}. R has a native function for a PCA, called  \texttt{prcomp()}. The weight of the variables relative to each other need to be defined, In this case bott variables are equal. This means that the correlation matrix and not the covariance matrix is used.
 
 \begin{lstlisting}
@@ -1870,4 +1870,140 @@ It is a controversial field, many diverging opinions.
 \end{itemize}
 Ethical rule-of-thumb: be clear and transparent about your methods, data and the analyses! We all make smaller or larger mistakes – the important thing is that the reader is given full opportunity to assess your data and statistical analyses.
 
+\section{Experimental design in Biostatistics (Mareike)}
+
+How to partition variation of an interesting biological signam from envireonmental noise and confounding factors
+
+\begin{itemize}
+\item define a testable hypothesis
+\item understand variation in \textit{your} system and how to control it
+\item know how the data will be analysed
+\end{itemize}
+
+\textbf{sampling goals}
+\begin{itemize}
+\item minimize systematic errors
+\item minimize unwanted variability
+\item generalize to a wider population
+\end{itemize}
+
+\subsection{types of studies}
+
+\subsubsection{observational, mensurative}
+can find association which can best \textit{suggest} a causality (correlation not causation). Assignment of treatments is done by the researcher (assign treatment to patients). 
+\begin{figure}[h]
+\center
+\includegraphics[width = 0.7\textwidth]{exp-design/observational.png}
+\caption{Smoking and suicide: correlation not causation}
+\end{figure}
+Improvements that make the case for causation stronger
+\begin{itemize}
+\item Findinga strong correlation
+\item In multiple studies using variable subjects
+\item Dosage effect: mores moking leads to more cancer
+\item Contrasting groups that are matched by all other variables than the one in question
+\item A theory on causality
+\end{itemize}
+
+To truly prove causation, an experimental study is (probably) needed
+
+\subsubsection{experimental, manipulative}
+can \textit{determine} causality in an association. the researcher does not assign the individuals (measure plants in nature, size is not determined by the researcher).\par 
+Example above: maybe use an animal experiment? That can be carried out experimentally.\par 
+\noindent
+\textbf{design of a manipulative experiment:} Includes a set of treatments selected for comparison. Specifies the subjects to which the treatments will be applied and gives the rules by which the treatments are allocated to the experimental units. It indicates both the measurements to be made and the analysis to be done to meet the objectives.\par 
+
+\subsubsection{objectives in a study design}
+Essential in both observational and manipulative studies.\par 
+Measurements need to be accurate (free from bias of confounding variables and observer biases, expectation of random sampling and independence of replication). The measurements also need to be precise, this means reduce the influence of sampling error without risking accuracy.
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.5\textwidth]{exp-design/accuratevsprecise.png}
+\caption{accuracy vs. precision}
+\end{figure}
+
+\subsection{Bias}
+The consistend deviaiton of estimates from the 'true' population characteristic.
+One reason for bias might be confounding factors:
+\begin{itemize}
+\item A third, unmeasured, variable driving a correlation between variables that are not causally related
+	\begin{itemize}
+	\item Can be a big problem in observational studies
+	\item Experimental artefacts e.g. due to sampling bias
+	\end{itemize}
+\item Treatments confounded in time and space (can be a problem in all kinds of studies)
+\item Sampling confounded due to observer/subject unconscious biases (humans)
+\end{itemize}
+
+\subsubsection{Bias in who is being sampled}
+Sampling Bias due to innate properties of subjects, unknown to the experimenter (some types of animals or people are easier to catch than others). The sampling methods themselves can also be biased (certan molecular methods are more effective for one variation of the phenomenon to be observed)
+
+\subsubsection{Observer/Subject biases}
+\begin{itemize}
+\item In human studies, study subjects cause bias (placebo effect)
+\item Handling in subjects in different treatment groups is biased
+\item observations themselves become biased due to the observer biases
+\end{itemize}
+This Bias can be reduced:
+\begin{itemize}
+\item Blinding prevents subjects and researchers from changing their behaviour
+	\begin{itemize}
+	\item single blind experiment (subjects are unaware of their treatment (necessary in human studies)
+	\item double blind experiment (experimenter is onaware of which treatment is applied on which subjects)
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Control treatment}
+The most important way to reduce bias. Treatment and control groups should be treated the same in all other ways except for the part under investigation (inactive treatment to control for placebo effect, 'sham' operations also for animal subjects, similar handling stress to subjects or disturbance caused by applying a treatment per se. \par 
+In observational studies, a control group can be an age/sex/genotype matched group of individuals.
+\begin{center}
+\textit{no control, no conclusion!}
+\end{center}
+
+\subsubsection{Requirement of random sampling}
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.8\textwidth]{exp-design/random-sampling.png}
+\caption{A: a uniform random sample of 250 points on the unit square. B: the grid is divided into the 25 squares, 10 points are randomly sampled in each smaller square. C: same as B with 64 squares with 4 randomly sampled points in each small grid}
+\end{figure}
+True randomness consists of a mixture of clumps and non-clumps. Randomness is different from homogeneity.\par 
+in a \textit{random sample} each member of a population has an equal and independent chance of being selected. It minimizes bias and makes it possible to measure the amount of sampling error. Randomizaiton allows the later use of probability theory, and so gives a solid foundation for statistical analysis.\par 
+Experimental subjects (units) should be randomly assigned to treatment groups. The aim is to randomize explicitly (use a computer, coins, dice etc.) 
+\subsubsection{Precision}
+The closeness whith which results of replicates in a sample agree. It is a measure of dispersion of scattering around the mean value. \par 
+It is achieved through uniform experimental units, careful conduct of all operations before and during the experiment. More replicatoin also helps because it reduces the effect of chance.\par
+\textbf{reduces sampling error}
+
+\subsubsection{Replication}
+The sampling error is the quantified uncertainty. A statement is of no value without a statement of uncertainty in the estimate. It allows interpolationg patterns to a whole population.
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.45\textwidth]{exp-design/replication.png}
+\includegraphics[width = 0.45\textwidth]{exp-design/replication2.png}
+\caption{red arrow: standard error}
+\end{figure}
+It minimizes the risk of confounding effects and uncontrolled variation
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

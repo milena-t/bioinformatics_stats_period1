@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  10 OCT 2020 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  13 OCT 2020 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -74,27 +74,609 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
 )
+(/usr/share/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 
-! LaTeX Error: File `makecell.sty' not found.
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen145
+\ar@mcellbox=\box45
+\extrarowheight=\dimen146
+\NC@list=\toks19
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box46
+)
+\rotheadsize=\dimen147
+\c@nlinenum=\count178
+\TeXr@lab=\toks20
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count179
+\lst@gtempboxa=\box47
+\lst@token=\toks21
+\lst@length=\count180
+\lst@currlwidth=\dimen148
+\lst@column=\count181
+\lst@pos=\count182
+\lst@lostspace=\dimen149
+\lst@width=\dimen150
+\lst@newlines=\count183
+\lst@lineno=\count184
+\lst@maxwidth=\dimen151
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count185
+\lst@skipnumbers=\count186
+\lst@framebox=\box48
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.6 \usepackage
-               {listings}^^M
-*** (cannot \read from terminal in nonstop modes)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
- 
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen152
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen153
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count187
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count188
+\leftroot@=\count189
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count190
+\DOTSCASE@=\count191
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen154
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count192
+\c@MaxMatrixCols=\count193
+\dotsspace@=\muskip16
+\c@parentequation=\count194
+\dspbrk@lvl=\count195
+\tag@help=\toks23
+\row@=\count196
+\column@=\count197
+\maxfields@=\count198
+\andhelp@=\toks24
+\eqnshift@=\dimen155
+\alignsep@=\dimen156
+\tagshift@=\dimen157
+\tagwidth@=\dimen158
+\totwidth@=\dimen159
+\lineht@=\dimen160
+\@envbody=\toks25
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip54
+\multirow@cntb=\count199
+\multirow@dima=\skip55
+\bigstrutjot=\dimen161
+)
+(/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen162
+\WF@size=\dimen163
+\c@WF@wrappedlines=\count266
+\WF@box=\box51
+\WF@everypar=\toks27
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+(/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count267
+\l__pdf_internal_box=\box52
+) (./main.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(63.87643pt, 469.75499pt, 63.87645pt)
+* v-part:(T,H,B)=(63.39273pt, 686.56499pt, 95.08913pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=469.75499pt
+* \textheight=686.56499pt
+* \oddsidemargin=-8.39355pt
+* \evensidemargin=-8.39355pt
+* \topmargin=-45.87726pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count268
+\scratchdimen=\dimen164
+\scratchbox=\box53
+\nofMPsegments=\count269
+\nofMParguments=\count270
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count271
+\MPscratchDim=\dimen165
+\MPnumerator=\count272
+\makeMPintoPDFobject=\count273
+\everyMPtoPDFconversion=\toks29
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/share/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count274
+ (./main.toc
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write3
+ [2]
+<intro/p-value.png, id=16, 482.80376pt x 293.095pt>
+File: intro/p-value.png Graphic file (type png)
+<use intro/p-value.png>
+Package pdftex.def Info: intro/p-value.png  used on input line 49.
+(pdftex.def)             Requested size: 234.87749pt x 142.5847pt.
+<intro/tailed-tests.png, id=18, 981.6675pt x 395.4775pt>
+File: intro/tailed-tests.png Graphic file (type png)
+<use intro/tailed-tests.png>
+Package pdftex.def Info: intro/tailed-tests.png  used on input line 55.
+(pdftex.def)             Requested size: 352.31624pt x 141.93127pt.
+ [3 <./intro/p-value.png> <./intro/tailed-tests.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+[4]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+128.
+ (/usr/share/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [5]
+<lab1/multiple_testing.png, id=39, 367.3725pt x 291.33844pt>
+File: lab1/multiple_testing.png Graphic file (type png)
+<use lab1/multiple_testing.png>
+Package pdftex.def Info: lab1/multiple_testing.png  used on input line 154.
+(pdftex.def)             Requested size: 234.87749pt x 186.26924pt.
+<intro/normalverteilung2.png, id=40, 688.5725pt x 206.7725pt>
+File: intro/normalverteilung2.png Graphic file (type png)
+<use intro/normalverteilung2.png>
+Package pdftex.def Info: intro/normalverteilung2.png  used on input line 163.
+(pdftex.def)             Requested size: 422.77661pt x 126.95767pt.
+ [6 <./lab1/multiple_testing.png> <./intro/normalverteilung2.png>] [7] [8]
+<intro/residuals.png, id=57, 731.73375pt x 665.48625pt>
+File: intro/residuals.png Graphic file (type png)
+<use intro/residuals.png>
+Package pdftex.def Info: intro/residuals.png  used on input line 245.
+(pdftex.def)             Requested size: 234.87749pt x 213.60983pt.
+ [9 <./intro/residuals.png>] [10]
+<ANOVA/anovakinds.jpg, id=65, 1157.32375pt x 252.945pt>
+File: ANOVA/anovakinds.jpg Graphic file (type jpg)
+<use ANOVA/anovakinds.jpg>
+Package pdftex.def Info: ANOVA/anovakinds.jpg  used on input line 356.
+(pdftex.def)             Requested size: 469.75499pt x 102.66988pt.
+<lab2/lab2_boxplot.png, id=66, 732.7375pt x 407.5225pt>
+File: lab2/lab2_boxplot.png Graphic file (type png)
+<use lab2/lab2_boxplot.png>
+Package pdftex.def Info: lab2/lab2_boxplot.png  used on input line 369.
+(pdftex.def)             Requested size: 352.31624pt x 195.94435pt.
+ [11 <./ANOVA/anovakinds.jpg>]
+<lab2/hist_aov_residuals.png, id=70, 795.72281pt x 530.73282pt>
+File: lab2/hist_aov_residuals.png Graphic file (type png)
+<use lab2/hist_aov_residuals.png>
+Package pdftex.def Info: lab2/hist_aov_residuals.png  used on input line 381.
+(pdftex.def)             Requested size: 352.31624pt x 234.98895pt.
+<lab2/aov_plot.png, id=71, 825.0825pt x 484.81125pt>
+File: lab2/aov_plot.png Graphic file (type png)
+<use lab2/aov_plot.png>
+Package pdftex.def Info: lab2/aov_plot.png  used on input line 384.
+(pdftex.def)             Requested size: 446.2658pt x 262.22324pt.
+ [12 <./lab2/lab2_boxplot.png> <./lab2/hist_aov_residuals.png>] [13 <./lab2/aov
+_plot.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+<lab2/posthoc.png, id=81, 668.4975pt x 429.85594pt>
+File: lab2/posthoc.png Graphic file (type png)
+<use lab2/posthoc.png>
+Package pdftex.def Info: lab2/posthoc.png  used on input line 465.
+(pdftex.def)             Requested size: 352.31624pt x 226.5501pt.
+[14] [15 <./lab2/posthoc.png>]
+<lab3/lm_1.png, id=89, 783.67781pt x 451.6875pt>
+File: lab3/lm_1.png Graphic file (type png)
+<use lab3/lm_1.png>
+Package pdftex.def Info: lab3/lm_1.png  used on input line 534.
+(pdftex.def)             Requested size: 399.2946pt x 230.1439pt.
+ [16] [17 <./lab3/lm_1.png (PNG copy)>]
+<lab3/lattice.png, id=96, 495.35063pt x 451.6875pt>
+File: lab3/lattice.png Graphic file (type png)
+<use lab3/lattice.png>
+Package pdftex.def Info: lab3/lattice.png  used on input line 585.
+(pdftex.def)             Requested size: 281.85585pt x 257.00966pt.
+<lab3/effects.png, id=97, 495.35063pt x 451.6875pt>
+File: lab3/effects.png Graphic file (type png)
+<use lab3/effects.png>
+Package pdftex.def Info: lab3/effects.png  used on input line 593.
+(pdftex.def)             Requested size: 281.85585pt x 257.00966pt.
+ [18 <./lab3/lattice.png (PNG copy)> <./lab3/effects.png (PNG copy)>] [19] [20]
+<lab2/ex4.png, id=110, 634.62094pt x 335.00156pt>
+File: lab2/ex4.png Graphic file (type png)
+<use lab2/ex4.png>
+Package pdftex.def Info: lab2/ex4.png  used on input line 768.
+(pdftex.def)             Requested size: 352.31624pt x 185.98428pt.
+ [21]
+[22 <./lab2/ex4.png (PNG copy)>]
+<lab3/plot-vcrime-vs-police.png, id=117, 657.95813pt x 398.99063pt>
+File: lab3/plot-vcrime-vs-police.png Graphic file (type png)
+<use lab3/plot-vcrime-vs-police.png>
+Package pdftex.def Info: lab3/plot-vcrime-vs-police.png  used on input line 828
+.
+(pdftex.def)             Requested size: 399.2946pt x 242.14195pt.
+ [23 <./lab3/plot-vcrime-vs-police.png (PNG copy)>]
+Overfull \hbox (4.18031pt too wide) in paragraph at lines 894--895
+[]\OT1/cmr/m/n/10 None of the 'bull-shit' vari-ables are sig-nif-i-cantly re-la
+ted. The two mod-els can be com-pared by \OT1/cmtt/m/n/10 anova(mod2a,
+ []
+
+[24] [25] [26] [27]
+<PCA/pca_redundancy.png, id=134, 1019.81pt x 418.56375pt>
+File: PCA/pca_redundancy.png Graphic file (type png)
+<use PCA/pca_redundancy.png>
+Package pdftex.def Info: PCA/pca_redundancy.png  used on input line 1091.
+(pdftex.def)             Requested size: 281.85585pt x 115.68338pt.
+<PCA/PCA_components.png, id=135, 471.7625pt x 462.72874pt>
+File: PCA/PCA_components.png Graphic file (type png)
+<use PCA/PCA_components.png>
+Package pdftex.def Info: PCA/PCA_components.png  used on input line 1097.
+(pdftex.def)             Requested size: 187.89912pt x 184.30447pt.
+ [28 <./PCA/pca_redundancy.png>]
+<PCA/cov_multivariante.png, id=140, 660.4675pt x 589.20125pt>
+File: PCA/cov_multivariante.png Graphic file (type png)
+<use PCA/cov_multivariante.png>
+Package pdftex.def Info: PCA/cov_multivariante.png  used on input line 1123.
+(pdftex.def)             Requested size: 258.36667pt x 230.4978pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<PCA/screeplot.png, id=141, 547.04375pt x 408.52625pt>
+File: PCA/screeplot.png Graphic file (type png)
+<use PCA/screeplot.png>
+Package pdftex.def Info: PCA/screeplot.png  used on input line 1155.
+(pdftex.def)             Requested size: 230.18251pt x 171.89777pt.
+<PCA/pc1u2plot.png, id=142, 605.26125pt x 598.235pt>
+File: PCA/pc1u2plot.png Graphic file (type png)
+<use PCA/pc1u2plot.png>
+Package pdftex.def Info: PCA/pc1u2plot.png  used on input line 1156.
+(pdftex.def)             Requested size: 230.18251pt x 227.5051pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29 <./PCA/PCA_components.png> <./PCA/cov_multivariante.png>] [30 <./PCA/screep
+lot.png> <./PCA/pc1u2plot.png>] [31]
+<lab4/tadpole-pca-food.png, id=157, 602.25pt x 435.12563pt>
+File: lab4/tadpole-pca-food.png Graphic file (type png)
+<use lab4/tadpole-pca-food.png>
+Package pdftex.def Info: lab4/tadpole-pca-food.png  used on input line 1275.
+(pdftex.def)             Requested size: 352.31624pt x 254.55742pt.
+ [32]
+<PCA/pca-vs-lda.png, id=161, 973.6375pt x 491.8375pt>
+File: PCA/pca-vs-lda.png Graphic file (type png)
+<use PCA/pca-vs-lda.png>
+Package pdftex.def Info: PCA/pca-vs-lda.png  used on input line 1284.
+(pdftex.def)             Requested size: 422.77661pt x 213.56483pt.
+ [33 <./lab4/tadpole-pca-food.png (PNG copy)> <./PCA/pca-vs-lda.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1293
+
+ []
+
+[34] [35]
+<lab4/iris-pcs.png, id=173, 706.13812pt x 435.12563pt>
+File: lab4/iris-pcs.png Graphic file (type png)
+<use lab4/iris-pcs.png>
+Package pdftex.def Info: lab4/iris-pcs.png  used on input line 1411.
+(pdftex.def)             Requested size: 352.31624pt x 217.0975pt.
+<lab4/tadpole-pca.png, id=174, 668.4975pt x 435.12563pt>
+File: lab4/tadpole-pca.png Graphic file (type png)
+<use lab4/tadpole-pca.png>
+Package pdftex.def Info: lab4/tadpole-pca.png  used on input line 1442.
+(pdftex.def)             Requested size: 352.31624pt x 229.32742pt.
+ [36 <./lab4/iris-pcs.png (PNG copy)>]
+Overfull \hbox (7.35712pt too wide) in paragraph at lines 1451--1452
+[]\OT1/cmr/m/n/10 Ordination: mainly for vi-su-al-iza-tion: serves to suma-rize
+ mul-ti-vari-ante data by pro-duc-ing low-dimensional
+ []
+
+[37 <./lab4/tadpole-pca.png (PNG copy)>] [38]
+<PCA/1PC.png, id=185, 526.96875pt x 527.9725pt>
+File: PCA/1PC.png Graphic file (type png)
+<use PCA/1PC.png>
+Package pdftex.def Info: PCA/1PC.png  used on input line 1509.
+(pdftex.def)             Requested size: 230.18251pt x 230.62486pt.
+<PCA/2PC.png, id=186, 512.91624pt x 533.995pt>
+File: PCA/2PC.png Graphic file (type png)
+<use PCA/2PC.png>
+Package pdftex.def Info: PCA/2PC.png  used on input line 1510.
+(pdftex.def)             Requested size: 216.09044pt x 224.96896pt.
+ [39 <./PCA/1PC.png> <./PCA/2PC.png>] [40]
+<lab5/kmeans.png, id=195, 758.08218pt x 444.91219pt>
+File: lab5/kmeans.png Graphic file (type png)
+<use lab5/kmeans.png>
+Package pdftex.def Info: lab5/kmeans.png  used on input line 1609.
+(pdftex.def)             Requested size: 465.06001pt x 272.94388pt.
+<lab5/kmeans_ranking.png, id=196, 632.3625pt x 357.58594pt>
+File: lab5/kmeans_ranking.png Graphic file (type png)
+<use lab5/kmeans_ranking.png>
+Package pdftex.def Info: lab5/kmeans_ranking.png  used on input line 1619.
+(pdftex.def)             Requested size: 422.77661pt x 239.07388pt.
+ [41 <./lab5/kmeans.png (PNG copy)>]
+<lab5/hierarchical.png, id=200, 816.04875pt x 448.67625pt>
+File: lab5/hierarchical.png Graphic file (type png)
+<use lab5/hierarchical.png>
+Package pdftex.def Info: lab5/hierarchical.png  used on input line 1643.
+(pdftex.def)             Requested size: 526.12329pt x 289.281pt.
+
+Overfull \hbox (56.3683pt too wide) in paragraph at lines 1643--1644
+ [] 
+ []
+
+[42 <./lab5/kmeans_ranking.png (PNG copy)>] [43 <./lab5/hierarchical.png (PNG c
+opy)>]
+<bayesian/pca_res.png, id=208, 573.14125pt x 491.8375pt>
+File: bayesian/pca_res.png Graphic file (type png)
+<use bayesian/pca_res.png>
+Package pdftex.def Info: bayesian/pca_res.png  used on input line 1672.
+(pdftex.def)             Requested size: 352.31624pt x 302.33942pt.
+ [44 <./bayesian/pca_res.png>]
+<bayesian/Mantel-corr-hist.png, id=213, 512.91624pt x 538.01pt>
+File: bayesian/Mantel-corr-hist.png Graphic file (type png)
+<use bayesian/Mantel-corr-hist.png>
+Package pdftex.def Info: bayesian/Mantel-corr-hist.png  used on input line 1713
+.
+(pdftex.def)             Requested size: 234.87749pt x 246.37112pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1736
+
+ []
+
+[46 <./bayesian/Mantel-corr-hist.png>]
+<bayesian/priors-bayesian.png, id=221, 1036.87375pt x 460.72125pt>
+File: bayesian/priors-bayesian.png Graphic file (type png)
+<use bayesian/priors-bayesian.png>
+Package pdftex.def Info: bayesian/priors-bayesian.png  used on input line 1795.
+
+(pdftex.def)             Requested size: 422.77661pt x 187.85649pt.
+ [47 <./bayesian/priors-bayesian.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1819--1822
+
+ []
+
+<bayesian/MCMC-flowchart.png, id=226, 713.66624pt x 207.77625pt>
+File: bayesian/MCMC-flowchart.png Graphic file (type png)
+<use bayesian/MCMC-flowchart.png>
+Package pdftex.def Info: bayesian/MCMC-flowchart.png  used on input line 1825.
+(pdftex.def)             Requested size: 469.75499pt x 136.76497pt.
+<bayesian/MCMC-graphic.png, id=227, 807.015pt x 427.5975pt>
+File: bayesian/MCMC-graphic.png Graphic file (type png)
+<use bayesian/MCMC-graphic.png>
+Package pdftex.def Info: bayesian/MCMC-graphic.png  used on input line 1830.
+(pdftex.def)             Requested size: 230.18251pt x 121.95789pt.
+<bayesian/MCMC-figure-2.png, id=228, 597.23125pt x 304.13625pt>
+File: bayesian/MCMC-figure-2.png Graphic file (type png)
+<use bayesian/MCMC-figure-2.png>
+Package pdftex.def Info: bayesian/MCMC-figure-2.png  used on input line 1831.
+(pdftex.def)             Requested size: 230.18251pt x 117.22043pt.
+[48 <./bayesian/MCMC-flowchart.png> <./bayesian/MCMC-graphic.png> <./bayesian/M
+CMC-figure-2.png>] [49]
+<exp-design/observational.png, id=239, 644.4075pt x 314.17375pt>
+File: exp-design/observational.png Graphic file (type png)
+<use exp-design/observational.png>
+Package pdftex.def Info: exp-design/observational.png  used on input line 1896.
+
+(pdftex.def)             Requested size: 328.82706pt x 160.32236pt.
+<exp-design/accuratevsprecise.png, id=240, 652.4375pt x 656.4525pt>
+File: exp-design/accuratevsprecise.png Graphic file (type png)
+<use exp-design/accuratevsprecise.png>
+Package pdftex.def Info: exp-design/accuratevsprecise.png  used on input line 1
+921.
+(pdftex.def)             Requested size: 234.87749pt x 236.32272pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[50 <./exp-design/observational.png>] [51 <./exp-design/accuratevsprecise.png>]
+<exp-design/random-sampling.png, id=250, 1094.0875pt x 318.18875pt>
+File: exp-design/random-sampling.png Graphic file (type png)
+<use exp-design/random-sampling.png>
+Package pdftex.def Info: exp-design/random-sampling.png  used on input line 196
+6.
+(pdftex.def)             Requested size: 375.80542pt x 109.29457pt.
+<exp-design/replication.png, id=251, 551.05875pt x 490.83376pt>
+File: exp-design/replication.png Graphic file (type png)
+<use exp-design/replication.png>
+Package pdftex.def Info: exp-design/replication.png  used on input line 1981.
+(pdftex.def)             Requested size: 211.3883pt x 188.28629pt.
+<exp-design/replication2.png, id=252, 520.94624pt x 374.39874pt>
+File: exp-design/replication2.png Graphic file (type png)
+<use exp-design/replication2.png>
+Package pdftex.def Info: exp-design/replication2.png  used on input line 1982.
+(pdftex.def)             Requested size: 211.3883pt x 151.92201pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[52 <./exp-design/random-sampling.png>] [53 <./exp-design/replication.png> <./e
+xp-design/replication2.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 1144 strings out of 480478
- 15155 string characters out of 5905958
- 256891 words of memory out of 5000000
- 17226 multiletter control sequences out of 15000+600000
- 532338 words of font info for 24 fonts, out of 8000000 for 9000
+ 6504 strings out of 480478
+ 87268 string characters out of 5905958
+ 577379 words of memory out of 5000000
+ 22392 multiletter control sequences out of 15000+600000
+ 539987 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,0n,33p,202b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 34i,19n,40p,762b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvi
+ps/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt
+0900.pfb>
+Output written on main.pdf (53 pages, 2847370 bytes).
+PDF statistics:
+ 337 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+
