@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{float}
+\usepackage{amsthm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{CadetBlue},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\title{Stats summary}
+\author{Milena Trabert}
+\date{September 2020 (Semester 1)}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Lab 1}
+\subsection{The p-value, type I and type II errors}
+\begin{defn}
+\textit{p-vlaue:} probability to observe your effect size (e.g. the measured difference between sample means), or an even larger effect size, given that the null-hypothesis is true.
+\end{defn}
+
+General task: Test whether there is a difference between males and females (use normal distributed numbers to simulate data). In this case, the data is generated in a way that $H_0$ is true, there is no difference between males and females. The average score is 30 and the standard deviation is 10.
+
+\begin{lstlisting}
+males <- rnorm(10, 30, 10)
+females <- rnorm(10, 30, 10)
+
+hist(males)
+hist(females)
+\end{lstlisting}
+
+The Data fulfills the requirements for the t-test:
+\begin{itemize}
+\item The data is normally distributed
+\item each sample is taken at random from its respective population
+\item the variances are the same (for an independent sample test)
+\end{itemize}
+
+\begin{lstlisting}
+t.test(males, females, var.equal = TRUE)
+
+'	Two Sample t-test
+
+data:  males and females
+t = 0.23661, df = 18, p-value = 0.8156
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -8.499698 10.657185
+sample estimates:
+mean of x mean of y 
+ 32.19754  31.11880 '
+\end{lstlisting}
+The p-value shows that there is no significant difference between the samples ($0.8 \gg 0.05$). \\
+The $t$ value gives the effect size and the direction of the effect (positive or negative, in this case the mean of the males is greater since it was entered first into the function and the value is positive).\par
+
+\subsection{Multiple testing}
+Does the result change if we test a lot of groups of 10 men and 10 women? Repeat the experiment 1000 times (\texttt{ttestmf()}) and see how many significant results there are. 
+\begin{lstlisting}
+P_value <- 1:(1000)
+ttestmf <- function(numpeople){
+  for(i in 1:1000){
+    males <- rnorm(numpeople, 30, 10)
+    females <- rnorm(numpeople, 30, 10)
+    P_value[i] <- t.test(males, females, var.equal = TRUE)\$p.value
+  }  
+  sign.tests <-ifelse(P_value < 0.05, 1,0)
+  return(sign.tests)
+}
+
+t_tasks <- 1:100
+for (i in 1:100){
+  t_tasks[i]<-sum(ttestmf(1000))
+}
+\end{lstlisting}
+For a significance threshold of 0.05 there should be about 50 out of 1000 significant results in each run of \texttt{ttestmf()}, which is the case. \par 
+Some experiments in \texttt{t\_tasks} show a significant difference in mean, but this might be due to the large number of experiments. For this reason we need to control for multiple testing using the function \texttt{p.adjust()} with the bonferroni correction. This correction multiplies all p-values with the number of tests made, so finding significant tests is a lot harder to find significant result. The false discovery rate \texttt{fdr} can also be used instead of bonferroni.
+\begin{lstlisting}
+P_value <- 1:(100)
+for(i in 1:100){
+  males <- rnorm(numpeople, 30, 10)
+  females <- rnorm(numpeople, 30, 10)
+  P_value[i] <- t.test(males, females, var.equal = TRUE)$p.value
+}
+
+p.adjust(P_value, "bonferroni") #hist() can be used to visualize the results
+\end{lstlisting}
+
+Multiple testing will discard results that would be significant on their own (if there would'nt have been multiple tests).
+
+
+\section{Lab2}
+\subsection{One-way ANOVA}
+Analysis of variances: compare weight loss between three different diets
+\begin{lstlisting}
+setwd('set/working/directory')
+read.delim("diet.txt") -> diet
+diet$weight.loss <- diet$pre.weight -diet$weight6weeks
+boxplot(weight.loss ~ Diet, data = diet, col = 'light gray', ylab = 'Weight loss (kg)', xlab = 'Diet type')
+\end{lstlisting}
+Boxplot to understand the spread of the data, no practical use or actual results.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
