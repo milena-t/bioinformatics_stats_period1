@@ -1,0 +1,107 @@
+\contentsline {section}{\numberline {1}Introduction and Basics}{4}%
+\contentsline {subsection}{\numberline {1.1}Hypothesis testing}{4}%
+\contentsline {subsection}{\numberline {1.2}statistical significance and the p-value}{4}%
+\contentsline {subsection}{\numberline {1.3}One-tailed and two-tailed tests}{4}%
+\contentsline {subsection}{\numberline {1.4}Replicates}{5}%
+\contentsline {subsection}{\numberline {1.5}Conclusions from data}{5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Mean}{5}%
+\contentsline {subsubsection}{\numberline {1.5.2}Variance}{5}%
+\contentsline {subsubsection}{\numberline {1.5.3}t-test}{5}%
+\contentsline {subsubsection}{\numberline {1.5.4}Hypothesis testing}{6}%
+\contentsline {subsection}{\numberline {1.6}Different Distributions}{7}%
+\contentsline {subsubsection}{\numberline {1.6.1}Standardized normal distribution}{7}%
+\contentsline {subsubsection}{\numberline {1.6.2}Binomial distribution}{8}%
+\contentsline {subsubsection}{\numberline {1.6.3}Poisson distribution}{8}%
+\contentsline {subsubsection}{\numberline {1.6.4}Chi square or $\chi ^2$ distribution}{8}%
+\contentsline {subsection}{\numberline {1.7}Omics data}{8}%
+\contentsline {subsection}{\numberline {1.8}Distributions in R}{8}%
+\contentsline {subsection}{\numberline {1.9}analysis of frequencies in R}{9}%
+\contentsline {subsection}{\numberline {1.10}Residuals}{10}%
+\contentsline {subsection}{\numberline {1.11}Transformation}{10}%
+\contentsline {subsection}{\numberline {1.12}Outliers}{10}%
+\contentsline {subsection}{\numberline {1.13}Statistical significance tests}{10}%
+\contentsline {section}{\numberline {2}ANOVA}{11}%
+\contentsline {subsection}{\numberline {2.1}one-way ANOVA}{11}%
+\contentsline {subsubsection}{\numberline {2.1.1}Patritioning the sum of squares (SS)}{11}%
+\contentsline {subsubsection}{\numberline {2.1.2}Degrees of freedom (df)}{11}%
+\contentsline {subsubsection}{\numberline {2.1.3}Variances and F-tests}{12}%
+\contentsline {subsubsection}{\numberline {2.1.4}The ANOVA table}{12}%
+\contentsline {subsubsection}{\numberline {2.1.5}Post hoc tests}{12}%
+\contentsline {subsubsection}{\numberline {2.1.6}more aspects of ANOVA}{12}%
+\contentsline {subsubsection}{\numberline {2.1.7}Example in R for the one-way anova (lab 2)}{12}%
+\contentsline {subsection}{\numberline {2.2}two-way ANOVA}{16}%
+\contentsline {subsubsection}{\numberline {2.2.1}partitioning the sum of squares and y in two-way ANOVA}{16}%
+\contentsline {subsubsection}{\numberline {2.2.2}ANOVA-designs with dependent observations}{16}%
+\contentsline {subsubsection}{\numberline {2.2.3}Fixed or random factors}{16}%
+\contentsline {subsubsection}{\numberline {2.2.4}Example in R (lab 2)}{17}%
+\contentsline {subsection}{\numberline {2.3}calculating the F-ratio}{20}%
+\contentsline {subsubsection}{\numberline {2.3.1}Generalized linear models (lab 3)}{20}%
+\contentsline {subsection}{\numberline {2.4}Linear mixed effect models (LMEs) (lab 2 ex. 4)}{21}%
+\contentsline {subsection}{\numberline {2.5}correlation and regression (lab 3)}{23}%
+\contentsline {subsubsection}{\numberline {2.5.1}Correlation}{23}%
+\contentsline {subsubsection}{\numberline {2.5.2}simple linear regression}{24}%
+\contentsline {subsubsection}{\numberline {2.5.3}robust regression}{26}%
+\contentsline {subsubsection}{\numberline {2.5.4}multiple linear regression}{26}%
+\contentsline {section}{\numberline {3}PCA and Multivariante hypothesis testing}{28}%
+\contentsline {subsection}{\numberline {3.1}Matrices describing relationships between variables}{29}%
+\contentsline {subsection}{\numberline {3.2}Principal component analysis}{29}%
+\contentsline {subsubsection}{\numberline {3.2.1}Revisiting the american crime data:}{30}%
+\contentsline {subsection}{\numberline {3.3}Canonical correlation analysis (CCorA) and Partial least squares regression (PLS)}{31}%
+\contentsline {subsection}{\numberline {3.4}MANOVA}{32}%
+\contentsline {subsubsection}{\numberline {3.4.1}MANOVA on the tadpole dataset}{32}%
+\contentsline {subsection}{\numberline {3.5}Linear Discriminant analysis}{34}%
+\contentsline {subsection}{\numberline {3.6}Multivariante statistics (lab 4)}{35}%
+\contentsline {subsubsection}{\numberline {3.6.1}Example 2: iris data}{36}%
+\contentsline {subsubsection}{\numberline {3.6.2}Example 3: Tadpoles}{37}%
+\contentsline {subsubsection}{\numberline {3.6.3}relationship between ordination and regression}{38}%
+\contentsline {subsubsection}{\numberline {3.6.4}Dissimilarity/similarity}{39}%
+\contentsline {subsubsection}{\numberline {3.6.5}Ordination}{39}%
+\contentsline {subsubsection}{\numberline {3.6.6}direct gradient analysis}{40}%
+\contentsline {subsubsection}{\numberline {3.6.7}ordination: k means clustering (lab 5)}{41}%
+\contentsline {subsubsection}{\numberline {3.6.8}ordination: hierarchical clustering (lab5)}{43}%
+\contentsline {subsubsection}{\numberline {3.6.9}PCoA (aka classical multidimensional scaling, mds) in R}{44}%
+\contentsline {section}{\numberline {4}Problems with previous methods}{44}%
+\contentsline {section}{\numberline {5}Resampling}{45}%
+\contentsline {subsection}{\numberline {5.1}Randomization and permutation test}{45}%
+\contentsline {subsubsection}{\numberline {5.1.1}Yanomama villages example}{46}%
+\contentsline {subsubsection}{\numberline {5.1.2}Mantel test of association}{46}%
+\contentsline {subsubsection}{\numberline {5.1.3}Bootstrap}{46}%
+\contentsline {section}{\numberline {6}Bayesian statistics}{47}%
+\contentsline {subsection}{\numberline {6.1}Bayesian interference}{47}%
+\contentsline {subsection}{\numberline {6.2}Bayes Theorem: technical}{47}%
+\contentsline {subsection}{\numberline {6.3}Is he a zombie?}{48}%
+\contentsline {subsection}{\numberline {6.4}importance of the correct priors}{48}%
+\contentsline {subsection}{\numberline {6.5}Pros and cons of bayesian statistics}{49}%
+\contentsline {subsection}{\numberline {6.6}Markov chain Monte carlo modelling (MCMC)}{49}%
+\contentsline {subsubsection}{\numberline {6.6.1}MCMC pros and cons}{50}%
+\contentsline {section}{\numberline {7}good statistical practice}{50}%
+\contentsline {section}{\numberline {8}Experimental design in Biostatistics (Mareike)}{50}%
+\contentsline {subsection}{\numberline {8.1}types of studies}{51}%
+\contentsline {subsubsection}{\numberline {8.1.1}observational, mensurative}{51}%
+\contentsline {subsubsection}{\numberline {8.1.2}experimental, manipulative}{51}%
+\contentsline {subsubsection}{\numberline {8.1.3}objectives in a study design}{51}%
+\contentsline {subsection}{\numberline {8.2}Bias}{52}%
+\contentsline {subsubsection}{\numberline {8.2.1}Bias in who is being sampled}{52}%
+\contentsline {subsubsection}{\numberline {8.2.2}Observer/Subject biases}{52}%
+\contentsline {subsubsection}{\numberline {8.2.3}Control treatment}{53}%
+\contentsline {subsubsection}{\numberline {8.2.4}Requirement of random sampling}{53}%
+\contentsline {subsubsection}{\numberline {8.2.5}Precision}{53}%
+\contentsline {subsubsection}{\numberline {8.2.6}Replication}{53}%
+\contentsline {subsection}{\numberline {8.3}Stratification or 'Blocking'}{55}%
+\contentsline {subsubsection}{\numberline {8.3.1}Randomizing and blocking}{56}%
+\contentsline {subsubsection}{\numberline {8.3.2}Aim for a balanced design}{56}%
+\contentsline {subsubsection}{\numberline {8.3.3}Factorial designs}{56}%
+\contentsline {subsection}{\numberline {8.4}Summary}{56}%
+\contentsline {subsection}{\numberline {8.5}practical application lab 6}{57}%
+\contentsline {section}{\numberline {9}Genome Wide association studies (GWAS), ways to control for multiple testing}{58}%
+\contentsline {subsection}{\numberline {9.1}association mapping}{58}%
+\contentsline {subsection}{\numberline {9.2}Quantitative traits}{58}%
+\contentsline {subsection}{\numberline {9.3}principle of an association study}{59}%
+\contentsline {subsubsection}{\numberline {9.3.1}Bonferroni correction}{60}%
+\contentsline {subsubsection}{\numberline {9.3.2}Family wise error rate (FWER)}{61}%
+\contentsline {subsubsection}{\numberline {9.3.3}False discovery rate}{61}%
+\contentsline {subsubsection}{\numberline {9.3.4}Example}{62}%
+\contentsline {subsubsection}{\numberline {9.3.5}Using the Association mapping}{62}%
+\contentsline {subsection}{\numberline {9.4}Linkage disequilibrium (LD)}{62}%
+\contentsline {subsection}{\numberline {9.5}confounding in GWAS}{63}%
+\contentsline {subsubsection}{\numberline {9.5.1}population structure}{63}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  13 OCT 2020 23:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.10)  19 OCT 2020 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,18 +414,18 @@ Package pdftex.def Info: lab3/effects.png  used on input line 594.
 <lab2/ex4.png, id=113, 634.62094pt x 335.00156pt>
 File: lab2/ex4.png Graphic file (type png)
 <use lab2/ex4.png>
-Package pdftex.def Info: lab2/ex4.png  used on input line 769.
+Package pdftex.def Info: lab2/ex4.png  used on input line 770.
 (pdftex.def)             Requested size: 352.31624pt x 185.98428pt.
  [22]
 [23 <./lab2/ex4.png (PNG copy)>]
 <lab3/plot-vcrime-vs-police.png, id=120, 657.95813pt x 398.99063pt>
 File: lab3/plot-vcrime-vs-police.png Graphic file (type png)
 <use lab3/plot-vcrime-vs-police.png>
-Package pdftex.def Info: lab3/plot-vcrime-vs-police.png  used on input line 829
+Package pdftex.def Info: lab3/plot-vcrime-vs-police.png  used on input line 830
 .
 (pdftex.def)             Requested size: 399.2946pt x 242.14195pt.
  [24 <./lab3/plot-vcrime-vs-police.png (PNG copy)>]
-Overfull \hbox (4.18031pt too wide) in paragraph at lines 895--896
+Overfull \hbox (4.18031pt too wide) in paragraph at lines 896--897
 []\OT1/cmr/m/n/10 None of the 'bull-shit' vari-ables are sig-nif-i-cantly re-la
 ted. The two mod-els can be com-pared by \OT1/cmtt/m/n/10 anova(mod2a,
  []
@@ -434,18 +434,18 @@ ted. The two mod-els can be com-pared by \OT1/cmtt/m/n/10 anova(mod2a,
 <PCA/pca_redundancy.png, id=137, 1019.81pt x 418.56375pt>
 File: PCA/pca_redundancy.png Graphic file (type png)
 <use PCA/pca_redundancy.png>
-Package pdftex.def Info: PCA/pca_redundancy.png  used on input line 1092.
+Package pdftex.def Info: PCA/pca_redundancy.png  used on input line 1093.
 (pdftex.def)             Requested size: 281.85585pt x 115.68338pt.
 <PCA/PCA_components.png, id=138, 471.7625pt x 462.72874pt>
 File: PCA/PCA_components.png Graphic file (type png)
 <use PCA/PCA_components.png>
-Package pdftex.def Info: PCA/PCA_components.png  used on input line 1098.
+Package pdftex.def Info: PCA/PCA_components.png  used on input line 1099.
 (pdftex.def)             Requested size: 187.89912pt x 184.30447pt.
  [29 <./PCA/pca_redundancy.png>]
 <PCA/cov_multivariante.png, id=143, 660.4675pt x 589.20125pt>
 File: PCA/cov_multivariante.png Graphic file (type png)
 <use PCA/cov_multivariante.png>
-Package pdftex.def Info: PCA/cov_multivariante.png  used on input line 1124.
+Package pdftex.def Info: PCA/cov_multivariante.png  used on input line 1125.
 (pdftex.def)             Requested size: 258.36667pt x 230.4978pt.
 
 
@@ -454,12 +454,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <PCA/screeplot.png, id=144, 547.04375pt x 408.52625pt>
 File: PCA/screeplot.png Graphic file (type png)
 <use PCA/screeplot.png>
-Package pdftex.def Info: PCA/screeplot.png  used on input line 1156.
+Package pdftex.def Info: PCA/screeplot.png  used on input line 1157.
 (pdftex.def)             Requested size: 230.18251pt x 171.89777pt.
 <PCA/pc1u2plot.png, id=145, 605.26125pt x 598.235pt>
 File: PCA/pc1u2plot.png Graphic file (type png)
 <use PCA/pc1u2plot.png>
-Package pdftex.def Info: PCA/pc1u2plot.png  used on input line 1157.
+Package pdftex.def Info: PCA/pc1u2plot.png  used on input line 1158.
 (pdftex.def)             Requested size: 230.18251pt x 227.5051pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -469,16 +469,16 @@ lot.png> <./PCA/pc1u2plot.png>] [32]
 <lab4/tadpole-pca-food.png, id=160, 602.25pt x 435.12563pt>
 File: lab4/tadpole-pca-food.png Graphic file (type png)
 <use lab4/tadpole-pca-food.png>
-Package pdftex.def Info: lab4/tadpole-pca-food.png  used on input line 1276.
+Package pdftex.def Info: lab4/tadpole-pca-food.png  used on input line 1277.
 (pdftex.def)             Requested size: 352.31624pt x 254.55742pt.
  [33]
 <PCA/pca-vs-lda.png, id=164, 973.6375pt x 491.8375pt>
 File: PCA/pca-vs-lda.png Graphic file (type png)
 <use PCA/pca-vs-lda.png>
-Package pdftex.def Info: PCA/pca-vs-lda.png  used on input line 1285.
+Package pdftex.def Info: PCA/pca-vs-lda.png  used on input line 1286.
 (pdftex.def)             Requested size: 422.77661pt x 213.56483pt.
  [34 <./lab4/tadpole-pca-food.png (PNG copy)> <./PCA/pca-vs-lda.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1291--1294
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1295
 
  []
 
@@ -486,15 +486,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1291--1294
 <lab4/iris-pcs.png, id=176, 706.13812pt x 435.12563pt>
 File: lab4/iris-pcs.png Graphic file (type png)
 <use lab4/iris-pcs.png>
-Package pdftex.def Info: lab4/iris-pcs.png  used on input line 1412.
+Package pdftex.def Info: lab4/iris-pcs.png  used on input line 1413.
 (pdftex.def)             Requested size: 352.31624pt x 217.0975pt.
 <lab4/tadpole-pca.png, id=177, 668.4975pt x 435.12563pt>
 File: lab4/tadpole-pca.png Graphic file (type png)
 <use lab4/tadpole-pca.png>
-Package pdftex.def Info: lab4/tadpole-pca.png  used on input line 1443.
+Package pdftex.def Info: lab4/tadpole-pca.png  used on input line 1444.
 (pdftex.def)             Requested size: 352.31624pt x 229.32742pt.
  [37 <./lab4/iris-pcs.png (PNG copy)>]
-Overfull \hbox (7.35712pt too wide) in paragraph at lines 1452--1453
+Overfull \hbox (7.35712pt too wide) in paragraph at lines 1453--1454
 []\OT1/cmr/m/n/10 Ordination: mainly for vi-su-al-iza-tion: serves to suma-rize
  mul-ti-vari-ante data by pro-duc-ing low-dimensional
  []
@@ -503,32 +503,32 @@ Overfull \hbox (7.35712pt too wide) in paragraph at lines 1452--1453
 <PCA/1PC.png, id=188, 526.96875pt x 527.9725pt>
 File: PCA/1PC.png Graphic file (type png)
 <use PCA/1PC.png>
-Package pdftex.def Info: PCA/1PC.png  used on input line 1510.
+Package pdftex.def Info: PCA/1PC.png  used on input line 1511.
 (pdftex.def)             Requested size: 230.18251pt x 230.62486pt.
 <PCA/2PC.png, id=189, 512.91624pt x 533.995pt>
 File: PCA/2PC.png Graphic file (type png)
 <use PCA/2PC.png>
-Package pdftex.def Info: PCA/2PC.png  used on input line 1511.
+Package pdftex.def Info: PCA/2PC.png  used on input line 1512.
 (pdftex.def)             Requested size: 216.09044pt x 224.96896pt.
  [40 <./PCA/1PC.png> <./PCA/2PC.png>] [41]
 <lab5/kmeans.png, id=198, 758.08218pt x 444.91219pt>
 File: lab5/kmeans.png Graphic file (type png)
 <use lab5/kmeans.png>
-Package pdftex.def Info: lab5/kmeans.png  used on input line 1610.
+Package pdftex.def Info: lab5/kmeans.png  used on input line 1611.
 (pdftex.def)             Requested size: 465.06001pt x 272.94388pt.
 <lab5/kmeans_ranking.png, id=199, 632.3625pt x 357.58594pt>
 File: lab5/kmeans_ranking.png Graphic file (type png)
 <use lab5/kmeans_ranking.png>
-Package pdftex.def Info: lab5/kmeans_ranking.png  used on input line 1620.
+Package pdftex.def Info: lab5/kmeans_ranking.png  used on input line 1621.
 (pdftex.def)             Requested size: 422.77661pt x 239.07388pt.
  [42 <./lab5/kmeans.png (PNG copy)>]
 <lab5/hierarchical.png, id=203, 816.04875pt x 448.67625pt>
 File: lab5/hierarchical.png Graphic file (type png)
 <use lab5/hierarchical.png>
-Package pdftex.def Info: lab5/hierarchical.png  used on input line 1644.
+Package pdftex.def Info: lab5/hierarchical.png  used on input line 1645.
 (pdftex.def)             Requested size: 526.12329pt x 289.281pt.
 
-Overfull \hbox (56.3683pt too wide) in paragraph at lines 1644--1645
+Overfull \hbox (56.3683pt too wide) in paragraph at lines 1645--1646
  [] 
  []
 
@@ -537,13 +537,13 @@ opy)>]
 <bayesian/pca_res.png, id=211, 573.14125pt x 491.8375pt>
 File: bayesian/pca_res.png Graphic file (type png)
 <use bayesian/pca_res.png>
-Package pdftex.def Info: bayesian/pca_res.png  used on input line 1673.
+Package pdftex.def Info: bayesian/pca_res.png  used on input line 1674.
 (pdftex.def)             Requested size: 352.31624pt x 302.33942pt.
  [45 <./bayesian/pca_res.png>]
 <bayesian/Mantel-corr-hist.png, id=216, 512.91624pt x 538.01pt>
 File: bayesian/Mantel-corr-hist.png Graphic file (type png)
 <use bayesian/Mantel-corr-hist.png>
-Package pdftex.def Info: bayesian/Mantel-corr-hist.png  used on input line 1714
+Package pdftex.def Info: bayesian/Mantel-corr-hist.png  used on input line 1715
 .
 (pdftex.def)             Requested size: 234.87749pt x 246.37112pt.
 
@@ -551,7 +551,7 @@ Package pdftex.def Info: bayesian/Mantel-corr-hist.png  used on input line 1714
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1735--1737
+Underfull \hbox (badness 10000) in paragraph at lines 1736--1738
 
  []
 
@@ -559,42 +559,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 1735--1737
 <bayesian/priors-bayesian.png, id=224, 1036.87375pt x 460.72125pt>
 File: bayesian/priors-bayesian.png Graphic file (type png)
 <use bayesian/priors-bayesian.png>
-Package pdftex.def Info: bayesian/priors-bayesian.png  used on input line 1796.
+Package pdftex.def Info: bayesian/priors-bayesian.png  used on input line 1797.
 
 (pdftex.def)             Requested size: 422.77661pt x 187.85649pt.
  [48 <./bayesian/priors-bayesian.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1820--1823
+Underfull \hbox (badness 10000) in paragraph at lines 1821--1824
 
  []
 
 <bayesian/MCMC-flowchart.png, id=229, 713.66624pt x 207.77625pt>
 File: bayesian/MCMC-flowchart.png Graphic file (type png)
 <use bayesian/MCMC-flowchart.png>
-Package pdftex.def Info: bayesian/MCMC-flowchart.png  used on input line 1826.
+Package pdftex.def Info: bayesian/MCMC-flowchart.png  used on input line 1827.
 (pdftex.def)             Requested size: 469.75499pt x 136.76497pt.
 <bayesian/MCMC-graphic.png, id=230, 807.015pt x 427.5975pt>
 File: bayesian/MCMC-graphic.png Graphic file (type png)
 <use bayesian/MCMC-graphic.png>
-Package pdftex.def Info: bayesian/MCMC-graphic.png  used on input line 1831.
+Package pdftex.def Info: bayesian/MCMC-graphic.png  used on input line 1832.
 (pdftex.def)             Requested size: 230.18251pt x 121.95789pt.
 <bayesian/MCMC-figure-2.png, id=231, 597.23125pt x 304.13625pt>
 File: bayesian/MCMC-figure-2.png Graphic file (type png)
 <use bayesian/MCMC-figure-2.png>
-Package pdftex.def Info: bayesian/MCMC-figure-2.png  used on input line 1832.
+Package pdftex.def Info: bayesian/MCMC-figure-2.png  used on input line 1833.
 (pdftex.def)             Requested size: 230.18251pt x 117.22043pt.
 [49 <./bayesian/MCMC-flowchart.png> <./bayesian/MCMC-graphic.png> <./bayesian/M
 CMC-figure-2.png>] [50]
 <exp-design/observational.png, id=243, 644.4075pt x 314.17375pt>
 File: exp-design/observational.png Graphic file (type png)
 <use exp-design/observational.png>
-Package pdftex.def Info: exp-design/observational.png  used on input line 1897.
+Package pdftex.def Info: exp-design/observational.png  used on input line 1898.
 
 (pdftex.def)             Requested size: 328.82706pt x 160.32236pt.
 <exp-design/accuratevsprecise.png, id=244, 652.4375pt x 656.4525pt>
 File: exp-design/accuratevsprecise.png Graphic file (type png)
 <use exp-design/accuratevsprecise.png>
 Package pdftex.def Info: exp-design/accuratevsprecise.png  used on input line 1
-922.
+923.
 (pdftex.def)             Requested size: 234.87749pt x 236.32272pt.
 
 
@@ -605,45 +605,45 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: exp-design/random-sampling.png Graphic file (type png)
 <use exp-design/random-sampling.png>
 Package pdftex.def Info: exp-design/random-sampling.png  used on input line 196
-7.
+8.
 (pdftex.def)             Requested size: 375.80542pt x 109.29457pt.
 <exp-design/replication.png, id=254, 551.05875pt x 490.83376pt>
 File: exp-design/replication.png Graphic file (type png)
 <use exp-design/replication.png>
-Package pdftex.def Info: exp-design/replication.png  used on input line 1982.
+Package pdftex.def Info: exp-design/replication.png  used on input line 1983.
 (pdftex.def)             Requested size: 211.3883pt x 188.28629pt.
 <exp-design/replication2.png, id=255, 520.94624pt x 374.39874pt>
 File: exp-design/replication2.png Graphic file (type png)
 <use exp-design/replication2.png>
-Package pdftex.def Info: exp-design/replication2.png  used on input line 1983.
+Package pdftex.def Info: exp-design/replication2.png  used on input line 1984.
 (pdftex.def)             Requested size: 211.3883pt x 151.92201pt.
 [53 <./exp-design/random-sampling.png>]
 <exp-design/small-n.png, id=260, 457.71pt x 553.06625pt>
 File: exp-design/small-n.png Graphic file (type png)
 <use exp-design/small-n.png>
-Package pdftex.def Info: exp-design/small-n.png  used on input line 1992.
+Package pdftex.def Info: exp-design/small-n.png  used on input line 1993.
 (pdftex.def)             Requested size: 234.87749pt x 283.80695pt.
 <exp-design/replicationplant.png, id=261, 346.29375pt x 259.97125pt>
 File: exp-design/replicationplant.png Graphic file (type png)
 <use exp-design/replicationplant.png>
 Package pdftex.def Info: exp-design/replicationplant.png  used on input line 20
-00.
+01.
 (pdftex.def)             Requested size: 93.94955pt x 70.53035pt.
 <exp-design/replicationplants2.png, id=262, 1000.73875pt x 363.3575pt>
 File: exp-design/replicationplants2.png Graphic file (type png)
 <use exp-design/replicationplants2.png>
 Package pdftex.def Info: exp-design/replicationplants2.png  used on input line 
-2001.
+2002.
 (pdftex.def)             Requested size: 352.31624pt x 127.91997pt.
 <exp-design/replicationplants6.png, id=263, 1036.87375pt x 371.3875pt>
 File: exp-design/replicationplants6.png Graphic file (type png)
 <use exp-design/replicationplants6.png>
 Package pdftex.def Info: exp-design/replicationplants6.png  used on input line 
-2002.
+2003.
 (pdftex.def)             Requested size: 375.80542pt x 134.6061pt.
  [54 <./exp-design/replication.png> <./exp-design/replication2.png> <./exp-desi
 gn/small-n.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2018
+Underfull \hbox (badness 10000) in paragraph at lines 2015--2019
 
  []
 
@@ -652,57 +652,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 2014--2018
 <exp-design/greenhouse1.png, id=277, 1114.1625pt x 245.91875pt>
 File: exp-design/greenhouse1.png Graphic file (type png)
 <use exp-design/greenhouse1.png>
-Package pdftex.def Info: exp-design/greenhouse1.png  used on input line 2033.
+Package pdftex.def Info: exp-design/greenhouse1.png  used on input line 2034.
 (pdftex.def)             Requested size: 422.77661pt x 93.315pt.
 <exp-design/greenhouse2.png, id=278, 1115.16624pt x 231.86626pt>
 File: exp-design/greenhouse2.png Graphic file (type png)
 <use exp-design/greenhouse2.png>
-Package pdftex.def Info: exp-design/greenhouse2.png  used on input line 2034.
+Package pdftex.def Info: exp-design/greenhouse2.png  used on input line 2035.
 (pdftex.def)             Requested size: 422.77661pt x 87.90134pt.
- [56 <./exp-design/greenhouse1.png> <./exp-design/greenhouse2.png>] [57]
-<gwa/arabidopsis-lm.png, id=287, 559.08875pt x 468.75125pt>
+ [56 <./exp-design/greenhouse1.png> <./exp-design/greenhouse2.png>]
+<lab6-exp-design/mdsplot.png, id=284, 748.7975pt x 676.5275pt>
+File: lab6-exp-design/mdsplot.png Graphic file (type png)
+<use lab6-exp-design/mdsplot.png>
+Package pdftex.def Info: lab6-exp-design/mdsplot.png  used on input line 2108.
+(pdftex.def)             Requested size: 234.87749pt x 212.20918pt.
+ [57] [58 <./lab6-exp-design/mdsplot.png>]
+<gwa/arabidopsis-lm.png, id=293, 559.08875pt x 468.75125pt>
 File: gwa/arabidopsis-lm.png Graphic file (type png)
 <use gwa/arabidopsis-lm.png>
-Package pdftex.def Info: gwa/arabidopsis-lm.png  used on input line 2122.
+Package pdftex.def Info: gwa/arabidopsis-lm.png  used on input line 2177.
 (pdftex.def)             Requested size: 281.85585pt x 236.32054pt.
-<gwa/arabidopsis-lm2.png, id=288, 411.5375pt x 882.29625pt>
+<gwa/arabidopsis-lm2.png, id=294, 411.5375pt x 882.29625pt>
 File: gwa/arabidopsis-lm2.png Graphic file (type png)
 <use gwa/arabidopsis-lm2.png>
-Package pdftex.def Info: gwa/arabidopsis-lm2.png  used on input line 2123.
+Package pdftex.def Info: gwa/arabidopsis-lm2.png  used on input line 2178.
 (pdftex.def)             Requested size: 136.22578pt x 292.0472pt.
- [58 <./gwa/arabidopsis-lm.png> <./gwa/arabidopsis-lm2.png>] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 2196--2206
+ [59]
+[60 <./gwa/arabidopsis-lm.png> <./gwa/arabidopsis-lm2.png>] [61]
+Underfull \hbox (badness 10000) in paragraph at lines 2251--2261
 
  []
 
-<gwa/manhattan.png, id=297, 832.10875pt x 519.9425pt>
+<gwa/manhattan.png, id=307, 832.10875pt x 519.9425pt>
 File: gwa/manhattan.png Graphic file (type png)
 <use gwa/manhattan.png>
-Package pdftex.def Info: gwa/manhattan.png  used on input line 2216.
+Package pdftex.def Info: gwa/manhattan.png  used on input line 2271.
 (pdftex.def)             Requested size: 328.82706pt x 205.46628pt.
-<gwa/linkage-equilibrium.png, id=298, 795.97375pt x 364.36125pt>
+<gwa/linkage-equilibrium.png, id=308, 795.97375pt x 364.36125pt>
 File: gwa/linkage-equilibrium.png Graphic file (type png)
 <use gwa/linkage-equilibrium.png>
-Package pdftex.def Info: gwa/linkage-equilibrium.png  used on input line 2226.
+Package pdftex.def Info: gwa/linkage-equilibrium.png  used on input line 2281.
 (pdftex.def)             Requested size: 281.85585pt x 129.01834pt.
-[60 <./gwa/manhattan.png>]
-<gwa/ld-plot.png, id=303, 926.46124pt x 614.295pt>
+[62 <./gwa/manhattan.png>]
+<gwa/ld-plot.png, id=313, 926.46124pt x 614.295pt>
 File: gwa/ld-plot.png Graphic file (type png)
 <use gwa/ld-plot.png>
-Package pdftex.def Info: gwa/ld-plot.png  used on input line 2233.
+Package pdftex.def Info: gwa/ld-plot.png  used on input line 2288.
 (pdftex.def)             Requested size: 234.87749pt x 155.72925pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2241--2243
+Underfull \hbox (badness 10000) in paragraph at lines 2296--2298
 
  []
 
-[61 <./gwa/linkage-equilibrium.png> <./gwa/ld-plot.png>] (./main.aux) ) 
+[63 <./gwa/linkage-equilibrium.png> <./gwa/ld-plot.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 6203 strings out of 480478
- 82505 string characters out of 5905958
+ 6233 strings out of 480478
+ 82959 string characters out of 5905958
  578713 words of memory out of 5000000
- 22103 multiletter control sequences out of 15000+600000
- 539987 words of font info for 51 fonts, out of 8000000 for 9000
+ 22130 multiletter control sequences out of 15000+600000
+ 540284 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,19n,40p,762b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/sh
@@ -725,11 +732,12 @@ dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type
 nts/cm/cmti9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/
 texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/font
-s/type1/public/cm-super/sftt0900.pfb>
-Output written on main.pdf (61 pages, 3892344 bytes).
+s/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sftt1000.pfb>
+Output written on main.pdf (63 pages, 3940088 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
+ 398 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 256 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

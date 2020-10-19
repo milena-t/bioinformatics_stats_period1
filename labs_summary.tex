@@ -115,7 +115,7 @@ for(i in 1:100){
 p.adjust(P_value, "bonferroni") #hist() can be used to visualize the results
 \end{lstlisting}
 
-Multiple testing will discard results that would be significant on their own (if there would'nt have been multiple tests).
+Multiple testing will discard results that would be significant on their own (if there wouldn't have been multiple tests).
 
 
 \section{Lab2}
@@ -127,8 +127,19 @@ read.delim("diet.txt") -> diet
 diet$weight.loss <- diet$pre.weight -diet$weight6weeks
 boxplot(weight.loss ~ Diet, data = diet, col = 'light gray', ylab = 'Weight loss (kg)', xlab = 'Diet type')
 \end{lstlisting}
-Boxplot to understand the spread of the data, no practical use or actual results.
+Boxplot to understand the spread of the data, no practical use or actual results.\par 
+There are two basic ways to perform ANOVA in \texttt{R}:
+\begin{lstlisting}
+mod1a <- aov(weight.loss ~ Diet, data = diet)
+mod1b <- lm(weight.loss ~ Diet, data = diet)
+par(mfrow = c(2,2))
+plot(mod1a)
+plot(mod1b)
+hist(resid(mod1a))
+\end{lstlisting}
+The dependend response variable weight loss is related to the independent explanatory variable Diet. (R has built in diagnostics when the response variable is continuous and normally distributed). 
 
+In chapter 19 in \textit{McKillup} the process of choosing a test is outlined. 
 \end{document}
 
 
