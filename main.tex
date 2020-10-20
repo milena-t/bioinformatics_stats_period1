@@ -151,7 +151,7 @@ mean of x mean of y
 \end{lstlisting}
 The p-value shows that there is no significant difference between the samples ($0.8 \gg 0.05$). The $t$ value gives the effect size and the direction of the effect (positive or negative, in this case the mean of the males is greater since it was entered first into the function and the value is positive).\par
 For only 10 samples, the type-II-error (acceptance of the false null-hypothesis that the samples are not significantly different) will be very large, sampling more will give a better estimate. \textbf{Type-II-errors decrease (and statistical power increases) with the square root of the sample size.}\par 
-As discussed above, some samples will have type-I-error when the experiment is conducted often enough, for this reason the analysis needs to be corrected for multiple testing, the type I error does not change with a higher sample size.\par
+As discussed above, some samples will have type-I-error when the experiment is conducted often enough, for this reason the analysis needs to be corrected for multiple testing, the type I error does not change with a higher sample size. Correcting for multiple testing, again, increases the risk of type II error. \par
 \begin{lstlisting}
 P_value <- 1:(100)
 for(i in 1:100){
@@ -159,14 +159,16 @@ for(i in 1:100){
   females <- rnorm(1000, 30, 10)
   P_value[i] <- t.test(males, females, var.equal = TRUE)$p.value
 }
-hist(p.adjust(P_value, "bonferroni")), #ir 'fdr', see below
+
+p.adjust(P_value, "bonferroni"), #if 'fdr', see below
+hist(p.adjust(P_value, "bonferroni"))#to visualize
 \end{lstlisting}
 The resulting histogram:
 \begin{center}
     \includegraphics[width = 0.5\textwidth]{lab1/multiple_testing.png}
 \end{center}
 The \textit{Bonferroni} Method multiplies all p-values with the number of tests conducted, so getting significant results is harder with more test. Another method is the false discovery rate (fdr, aka Benjamini-Hochberg method).\par
-Multiple testing in general means that some results that would be significant on their own are discarded because there were multiple tests conducted. For this reason, in biology, sometimes the number of tests are limited beforehand.
+Multiple testing in general means that some results that would be significant on their own are discarded because there were multiple tests conducted. For this reason, in biology, sometimes the number of tests are limited beforehand. There are less significant p-values from all experiments than there were before the adjustment.
 
 \subsection{Different Distributions}
 
@@ -233,7 +235,7 @@ calculate the number of alleles
 \end{split}
 \end{equation*}
 Exp: $p(A)^2 + 2p(a)P(A) + p(a)^2$ \\
-Chi-2: $\frac{(400/456)^2}{456} + \frac{(550-439)^2}{439} + \frac{(50-105)^2}{105} \: = \: 63.8$\\
+Chi-2: $\frac{(400-456)^2}{456} + \frac{(550-439)^2}{439} + \frac{(50-105)^2}{105} \: = \: 63.8$\\
 $P_{HWE}:$
 \begin{lstlisting}
 1-pchisq(63.8, df = 2)
@@ -358,7 +360,7 @@ The anova table is the summary of the different group-variations
 Compare the calculated f-Value (see row 'between') for nominator df = 2 and df = 14 (for between and within group): $F_{crit} $ at $ \alpha _{0.05} : \:\: F_{2.14} = 3.74$. The above calculated F is 6.93 > 3.74 which means  $H_0$ (there is no difference between groups) is rejected and the alternative hypothesis is accepted. The rest can be calculated in \textit{R}, the resulting p-value is 0.008
 
 \subsubsection{Post hoc tests}
-Which groups differ? With omics data there might be many groups to compare (p>n problem), which makes special strategies necessary.\\
+Which groups differ? With omics data there might be many groups to compare (p$>$n problem), which makes special strategies necessary.\\
 Alternative 1: plot groups with 95\% confidence intervals.\\
 Alternative 2: make \textit{planned comparisons} for some group-combinations: A-B, A-C, but not B-C. This requires an a-priori hypothesis for comparison which reduces the number of tests.
 
@@ -520,10 +522,7 @@ In more complicated experiments, there are often more explanatory variables, and
 mod2a <- lm(weight.loss ~ Diet + gender, data = diet)
 summary(mod2a)
 
-Call:
-lm(formula = weight.loss ~ Diet + gender, data = diet)
-
-Residuals:
+'Residuals:
     Min      1Q  Median      3Q     Max 
 -5.3262 -1.4018  0.1218  1.6941  5.6445 
 
@@ -536,7 +535,7 @@ genderM      0.09508    0.55258   0.172  0.86387
 
 Residual standard error: 2.387 on 72 degrees of freedom
 Multiple R-squared:  0.1289,	Adjusted R-squared:  0.09259 
-F-statistic: 3.551 on 3 and 72 DF,  p-value: 0.01855
+F-statistic: 3.551 on 3 and 72 DF,  p-value: 0.01855'
 \end{lstlisting}
 Now, there are the effect of gender and diet in the same model. There are two null-hypotheses now: Men and women loose the same amount of weight, and that all three diets are the same. From the model above we can conclude then there is no significant difference between men and women, $H_0(1)$ is accepted, but there is still a significant difference between diet C and the others, so $H_0(2)$ is rejected.\par
 \begin{lstlisting}
@@ -553,10 +552,7 @@ mod2b <- lm(weight.loss ~ Diet + gender + Diet:gender, data=diet)
 mod2c <- lm(weight.loss ~ Diet * gender, data=diet)
 #both ways are exactly equivalent
 summary(mod2b)
-
-Call:
-lm(formula = weight.loss ~ Diet * gender, data = diet)
-
+'
 Residuals:
     Min      1Q  Median      3Q     Max 
 -5.5091 -1.2958  0.0705  1.2159  5.4500 
@@ -571,13 +567,13 @@ DietB:genderM   0.9019     1.3395   0.673   0.5030
 DietC:genderM  -2.2467     1.3145  -1.709   0.0919 .  
 Residual standard error: 2.319 on 70 degrees of freedom
 Multiple R-squared:  0.2009,	Adjusted R-squared:  0.1438 
-F-statistic: 3.519 on 5 and 70 DF,  p-value: 0.006775
+F-statistic: 3.519 on 5 and 70 DF,  p-value: 0.006775'
 \end{lstlisting}
 To get the predicted weight loss for males on diet B you have to start from the intercept, add the value for diet B, the value for gender M, and the alue for diet B:gender M, so $3.05 -0.443 +0.60 +0.902 = 4.11$
 
 \begin{lstlisting}
 anova(mod2b)
-
+'
 Analysis of Variance Table
 
 Response: weight.loss
@@ -585,7 +581,7 @@ Response: weight.loss
 Diet         2  60.53 30.2635  5.6292 0.005408 **
 gender       1   0.17  0.1687  0.0314 0.859910   
 Diet:gender  2  33.90 16.9520  3.1532 0.048842 * 
-Residuals   70 376.33  5.3761                    
+Residuals   70 376.33  5.3761      '              
 
 \end{lstlisting}
 There is a third null hypothesis now: men and women respond the same way on all diets. It seems diet C is only significant for women, but men respond to all three diets about the same. There seems to be a significant two-way interaction between diet and gender. Diet C is not generally better, but only for women.\\
@@ -808,7 +804,7 @@ rho = cov(A, B)/(sqrt(var(A))*sqrt(var(B)))
 \begin{lstlisting}
 cor.test(A,B)
 '
-	Pearson's product-moment correlation
+	Pearsons product-moment correlation
 
 data:  A and B
 t = 16.557, df = 998, p-value < 2.2e-16
@@ -928,7 +924,7 @@ Residuals      48  '
 \end{lstlisting}
 
 The robust regression reduced the influence of the outlier \texttt{plot(simple.3)}.\par 
-The untransformed model has the highest p-value due to point 41. Log transforming reduced its influence but may have removed the data further from a normal distribution (bad). Robust regression is ok here if all other assumptions of normality are fulfilled. The robust regression gives a statistical significance somewhere between the other two models before and predicts a weaker relationship than the standard simple regression. In this example, this approach is the best. One outlier still has a little to much influence, but if the chioce is sufficiently motivated it could be removed (when still showing the manipulated tata next to the raw data).
+The untransformed model has the highest p-value due to point 41. Log transforming reduced its influence but may have removed the data further from a normal distribution (bad). Robust regression is ok here if all other assumptions of normality are fulfilled. The robust regression gives a statistical significance somewhere between the other two models before and predicts a weaker relationship than the standard simple regression. In this example, this approach is the best. One outlier still has a little to much influence, but if the choice is sufficiently motivated it could be removed (when still showing the manipulated tata next to the raw data).
 
 \subsubsection{multiple linear regression}
 
@@ -1320,7 +1316,7 @@ c.rate <- dat[,1]
 
 PC.crime <- prcomp(cbind(v.crime, c.rate), scale = T)
         #scale = true means that the two variables are weighted equally
-summary(PC.crime) 
+'summary(PC.crime) 
 Importance of components:
                           PC1    PC2
 Standard deviation     1.2920 0.5750
@@ -1333,7 +1329,7 @@ Importance of components:
                           PC1    PC2
 Standard deviation     1.2966 0.5647
 Proportion of Variance 0.8405 0.1595
-Cumulative Proportion  0.8405 1.0000
+Cumulative Proportion  0.8405 1.0000'
 \end{lstlisting}
 
 The output shows how much variance is explained by each principal component (given by their eigen-values) and how they are related to the original variables (given by their eigen-vectors). The first OC explains a great deal of the variation which is why only this is used. For the regression the PC scores for each individual on PC1 are important. They are extracted and used for a regression.
@@ -1343,7 +1339,7 @@ pc.crime.scores <- PC.crime$x[,1]
 pc.education.scores <- PC.Education$x[,1]
 mod <- lm(pc.crime.scores ~ dat$police.funding + pc.education.scores)
 summary(mod)
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -2.30491 -0.85342  0.04459  0.64144  2.78439 
 
@@ -1355,7 +1351,7 @@ pc.education.scores  0.21778    0.12484   1.744 0.087618 .
 
 Residual standard error: 1.123 on 47 degrees of freedom
 Multiple R-squared:  0.2755,	Adjusted R-squared:  0.2447 
-F-statistic: 8.936 on 2 and 47 DF,  p-value: 0.0005141
+F-statistic: 8.936 on 2 and 47 DF,  p-value: 0.0005141'
 \end{lstlisting}
 
 Now, the police funding has a significant of the variance of the crime data again, even though both crime.rate and violent.crime.
@@ -1378,7 +1374,7 @@ The PCA can be performed as before usint \texttt{prcomp()}. Scale = True is used
 ir.pca <- prcomp(iris[, 1:4] , scale = TRUE)
 ir.pca
 
-Standard deviations (1, .., p=4):
+'Standard deviations (1, .., p=4):
 [1] 1.7083611 0.9560494 0.3830886 0.1439265
 
 Rotation (n x k) = (4 x 4):
@@ -1386,7 +1382,7 @@ Rotation (n x k) = (4 x 4):
 Sepal.Length  0.5210659 -0.37741762  0.7195664  0.2612863
 Sepal.Width  -0.2693474 -0.92329566 -0.2443818 -0.1235096
 Petal.Length  0.5804131 -0.02449161 -0.1421264 -0.8014492
-Petal.Width   0.5648565 -0.06694199 -0.6342727  0.5235971
+Petal.Width   0.5648565 -0.06694199 -0.6342727  0.5235971'
 \end{lstlisting}
 
 The loadings in the eigeh-vectors of each PC represent the correlations between the origina variables and the PC. \par 
@@ -1394,11 +1390,11 @@ Another way to look at loadings are as weights, where the variables contributing
 How much is the variance explained by each principal component?
 \begin{lstlisting}
 summary(ir.pca)
-Importance of components:
+'Importance of components:
                           PC1    PC2     PC3     PC4
 Standard deviation     1.7084 0.9560 0.38309 0.14393
 Proportion of Variance 0.7296 0.2285 0.03669 0.00518
-Cumulative Proportion  0.7296 0.9581 0.99482 1.00000
+Cumulative Proportion  0.7296 0.9581 0.99482 1.00000'
 \end{lstlisting}
 
 The first principal component explains 0.7296\% of the variance of the entire dataset, the first and second combined then $0.7296+0.2285=0.9581$. The results can also be plotted with the package \texttt{ggfortify}.
@@ -1432,7 +1428,8 @@ Proportion of Variance 0.8317 0.06953 0.03273 0.02549 0.02169 0.0131 0.00578
 Cumulative Proportion  0.8317 0.90121 0.93394 0.95942 0.98112 0.9942 1.00000'
 \end{lstlisting}
 
-To explain at least 96\% of variance in the original data 5 out of 7 principal components are needed. The data can be plotted again with the library \texttt{ggfortify}. These PCA scores represent the coordinates of each individual object in the ordination. Each loading in each PC represents the weight of each variable when creating the principal components.
+To explain at least 96\% of variance in the original data 5 out of 7 principal components are needed. The data can be plotted again with the library \texttt{ggfortify}. These PCA scores represent the coordinates of each individual object in the ordination. Each loading in each PC represents the weight of each variable when creating the principal components. This can also be described as the correlation or contribution of each variable to each PC.\par 
+The second value, Proportion of Variance, shows how much variance in the dataset is described by the PC, with PC1 being the most important. This means the first four PCs are needed to describe over 95\% of the variation in this case.
 
 
 
@@ -1497,7 +1494,7 @@ A very large number of different methods available – only the common ones are 
 This works as follows:\par 
 New derived variables (Z$_{ij}$), that we call principal components or axes or dimensions, are created. Methods differ in how these derived variables are attained, but all are constructed from our data, based on either a dissimilarity matrix or the variance-covariance matrix.\par
 \textbf{Principal component analysis}: On the continuous raw data using euclidean distance. Applied to covariance- or correlation matrix based on original data, the Dimensions/axes called ”principal components”. Axes capture maximal variation in the original data and are orthogonal to each other.
-It is a good starting point to find trends in the data when p>n and can then be used for further analysis.\par
+It is a good starting point to find trends in the data when p$>$n and can then be used for further analysis.\par
 \textbf{Principal Coordination analysis}: (aka metric multidimensional scaling) More flexible than PCA, can be non-euclidean and non-continuous in creating the similarity matrix, then PCA on that matrix. It maximizes the correlation between dissimilarity matrix and ordination distance $\rightarrow$ ordinates samples along the multivariate dimension(s) that best separate objects. If the dissimilarity matrix is based on Euclidean distance in the original data, eigen-analysis on dissimilarity matrix will generate the same result as a PCA on the original data. It is difficult to get an intuitive feeling how the scores along the PCoA axis to the original data because they are further removed from it.\par
 \textbf{non-metric multidimensional scaling (NMDS)}: similar to PCoA but uses ranked data (1, 2, 3, 100 $\rightarrow$ 1, 2, 3, 4) and is more robust for this reason. It also uses the similarity matrix, the dimenstions are called coordinates or axes. The number of axes needs to be predetermined. It returns 'Stress' (how well the analysis fits the data): $>$0.2 poor, $<$0.05 excellent. The stress decreases when there are more ordination dimensions allowed.\par
 \vspace{0.3cm}
@@ -1968,8 +1965,7 @@ True randomness consists of a mixture of clumps and non-clumps. Randomness is di
 in a \textit{random sample} each member of a population has an equal and independent chance of being selected. It minimizes bias and makes it possible to measure the amount of sampling error. Randomizaiton allows the later use of probability theory, and so gives a solid foundation for statistical analysis.\par 
 Experimental subjects (units) should be randomly assigned to treatment groups. The aim is to randomize explicitly (use a computer, coins, dice etc.) 
 \subsubsection{Precision}
-The closeness whith which results of replicates in a sample agree. It is a measure of dispersion of scattering around the mean value. \par 
-It is achieved through uniform experimental units, careful conduct of all operations before and during the experiment. More replicatoin also helps because it reduces the effect of chance.\par
+The closeness with which results of replicates in a sample agree. It is a measure of dispersion of scattering around the mean value. It is achieved through uniform experimental units, careful conduct of all operations before and during the experiment. More replication also helps because it reduces the effect of chance.\par
 \textbf{reduces sampling error}
 
 \subsubsection{Replication}
@@ -2036,7 +2032,7 @@ The greenhouse fits too few plants for a a large scale experiment, multiples set
 It is bestito fix a variable if possible. e.g. use a single genotype if individual variation is to be minimized. If that is not possible, block (see months above). If that is not possible, randomize. A block needs to be recorded and accounted for in a model!\par 
 
 \subsubsection{Aim for a balanced design}
-A design is balanced when there are equal numbers of replicates at all levels of all conditions. The second major way to reduce the influence of sampling error on estimation and hypothesis testing. SE \textcolor{red}{what does that stand for?} of the differences between the means is smalles when ($1/n_1 + 1/n_2$)is smallest
+A design is balanced when there are equal numbers of replicates at all levels of all conditions. The second major way to reduce the influence of sampling error on estimation and hypothesis testing. SE of the differences between the means is smallest when ($1/n_1 + 1/n_2$)is smallest
 \begin{equation*}
 \begin{split}
 & n_1 = n_2 = 10 \;\;\; \Rightarrow \;\;\; ( \frac{1}{10} +\frac{1}{10} ) = 0.2 \\

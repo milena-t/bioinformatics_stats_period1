@@ -57,7 +57,7 @@
 \contentsline {subsubsection}{\numberline {3.6.4}Dissimilarity/similarity}{39}%
 \contentsline {subsubsection}{\numberline {3.6.5}Ordination}{39}%
 \contentsline {subsubsection}{\numberline {3.6.6}direct gradient analysis}{40}%
-\contentsline {subsubsection}{\numberline {3.6.7}ordination: k means clustering (lab 5)}{41}%
+\contentsline {subsubsection}{\numberline {3.6.7}Ordination: k means clustering (lab 5)}{41}%
 \contentsline {subsubsection}{\numberline {3.6.8}ordination: hierarchical clustering (lab5)}{43}%
 \contentsline {subsubsection}{\numberline {3.6.9}PCoA (aka classical multidimensional scaling, mds) in R}{44}%
 \contentsline {section}{\numberline {4}Problems with previous methods}{44}%
