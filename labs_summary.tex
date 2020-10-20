@@ -137,7 +137,29 @@ plot(mod1a)
 plot(mod1b)
 hist(resid(mod1a))
 \end{lstlisting}
-The dependend response variable weight loss is related to the independent explanatory variable Diet. (R has built in diagnostics when the response variable is continuous and normally distributed). 
+The dependent response variable weight loss is related to the independent explanatory variable Diet. (R has built in diagnostics when the response variable is continuous and normally distributed). The first plot is the QQ-plot, if the residuals follow the diagonal, they are normally distributed.
+
+\begin{lstlisting}
+summary(mod1a) #aov()
+'            Df Sum Sq Mean Sq F value Pr(>F)   
+Diet         2   60.5  30.264   5.383 0.0066 **
+Residuals   73  410.4   5.622    '
+
+summary(mod1b) #lm()
+'Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.3680 -1.4420  0.1759  1.6519  5.7000 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   3.3000     0.4840   6.818 2.26e-09 ***
+DietB        -0.0320     0.6776  -0.047  0.96246    
+DietC         1.8481     0.6652   2.778  0.00694 ** 
+
+Residual standard error: 2.371 on 73 degrees of freedom
+Multiple R-squared:  0.1285,	Adjusted R-squared:  0.1047 
+F-statistic: 5.383 on 2 and 73 DF,  p-value: 0.006596'
+\end{lstlisting}
 
 In chapter 19 in \textit{McKillup} the process of choosing a test is outlined. 
 \end{document}

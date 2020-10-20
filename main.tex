@@ -131,16 +131,27 @@ sign.tests <-ifelse(P.value <0.05, 1,0) #if the p-value is significant (<0.05), 
 sum(sign.tests)
 \end{lstlisting}
 
-In this case, there were 47 out of 1000 experiments, where the samples were significantly different. This means, the type 1 error rate is 0.047, in 4.7\% of cases the alternative hypothesis is wrongly accepted There should be about $1000\cdot 0.05 = 50$ significant tests on average. If the sample size per test would be larger (here only 10), there would still be about 50 significant tests, becaus the type-I-error rate stays the same. Just the accuracy would improve (for a single t-test, the 95\% confidence interval would be smaller, see output above).\par
+In this case, there were 47 out of 1000 experiments, where the samples were significantly different. This means, the type 1 error rate is 0.047, in 4.7\% of cases the alternative hypothesis is wrongly accepted There should be about $1000\cdot 0.05 = 50$ significant tests on average. If the sample size per test would be larger (here only 10), there would still be about 50 significant tests, because the type-I-error rate stays the same (this is because the p-value for significance is fixed). Just the accuracy would improve (for a single t-test, the 95\% confidence interval would be smaller, see output above). The type II error would decrease, because increased sample size would decrease the effect size needed to attain a significant p-value.\par
 But what if there is an actual difference?
 
 \begin{lstlisting}
 males <- rnorm(10, 29, 10)
 females <- rnorm(10, 30, 10)
 t.test(males, females, var.equal = TRUE)
+'	Two Sample t-test
+
+data:  males and females
+t = 0.23661, df = 18, p-value = 0.8156
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -8.499698 10.657185
+sample estimates:
+mean of x mean of y 
+ 32.19754  31.11880 '
 \end{lstlisting}
+The p-value shows that there is no significant difference between the samples ($0.8 \gg 0.05$). The $t$ value gives the effect size and the direction of the effect (positive or negative, in this case the mean of the males is greater since it was entered first into the function and the value is positive).\par
 For only 10 samples, the type-II-error (acceptance of the false null-hypothesis that the samples are not significantly different) will be very large, sampling more will give a better estimate. \textbf{Type-II-errors decrease (and statistical power increases) with the square root of the sample size.}\par 
-As discussed above, some samples will have type-I-error when the experiment is conducted often enough, for this reason the analysis needs to be corrected for multiple testing.\par
+As discussed above, some samples will have type-I-error when the experiment is conducted often enough, for this reason the analysis needs to be corrected for multiple testing, the type I error does not change with a higher sample size.\par
 \begin{lstlisting}
 P_value <- 1:(100)
 for(i in 1:100){
@@ -257,7 +268,8 @@ Most common transformations:
 \subsection{Outliers}
 Outliers have a disproportionate effect on model predictions. There are multiple ways of dealing with them:
 \begin{itemize}
-    \item \textbf{Remove}: If the typo is a mistake in the data, like a typo or if there is an accidental error in the data recording (like the outlier was accidentally recorded from a different population). It is also important for the outlier to be not systematic.
+    \item \textbf{Remove}: If the typo is a mistake in the data, like a typo or if there is an accidental error in the data recording (like the outlier was accidentally recorded from a different population). It is also important for the outlier to be not systematic. \par 
+    It is also possible to compare the analysis with and without the outlier if it can't be solved by data transformation.
     \item \textbf{Keep, but reduce the influence}: The entire dataset can be transformed to reduce the influence. Robust regressiond and a non-parametric test (using rank rather tan actual value of data-points) can also be used. Robust Regression removes every data point (one by one) and looks how the model changes to give outliers (that strongly change the model) less weight.
     \item \textbf{Change}: Change the value of the outlier toh that of the most extreme observaiton excluding the outlier.
 \end{itemize}
@@ -393,7 +405,7 @@ summary(mod1a)
 Diet         2   60.5  30.264   5.383 0.0066 **
 Residuals   73  410.4   5.622                  
 \end{lstlisting}
-The F-value is variance among groups divided by variance whithin groups (see equation \ref{fvalue}). Here itmeans that the groups (Diets) seem to be significantly different from one another.
+The F-value is variance among groups divided by variance within groups (see equation \ref{fvalue}). Here it means that the groups (Diets) seem to be significantly different from one another.
 
 \begin{lstlisting}
 summary(mod1b)
@@ -469,7 +481,7 @@ plot(TukeyHSD(mod1a))
 How do the diets differ from each other? Diets A and B are very similar to each other and their mean weight loss is about 0. Both diets differ greatly from diet C. The Tukey test tests for pairwise differences, which are given with a 95\% confidence interval.\par 
 
 \subsection{two-way ANOVA}
-Multiway ANOVA tests ofr effects of two or more catrgorical factors simltaneously. For a two-way anova there are three effects estimated: factor1, factor 2 and their interaction, some effects may be considered as 'fixed' or 'random', which also affects model estimates and p-values. Simpsons paradox may make it necessary to apply multy way ANOVA to identify actual casual relationships.
+Multiway ANOVA tests ofr effects of two or more categorical factors simultaneously. For a two-way anova there are three effects estimated: factor1, factor 2 and their interaction, some effects may be considered as 'fixed' or 'random', which also affects model estimates and p-values. Simpsons paradox may make it necessary to apply multy way ANOVA to identify actual casual relationships.
 
 
 \subsubsection{partitioning the sum of squares and y in two-way ANOVA}
@@ -491,7 +503,7 @@ The sum of squares and y are different for one-way and tro-way ANOVA.
 \subsubsection{ANOVA-designs with dependent observations}
 Observations can be dependent or independent, dependent observations have something in common, e.g spatial measures taken from the same patient/tissue/cell culture. There are specific ANOVA-designs for these occasions:
 \begin{itemize}
-    \item repeated measures ANOVA: within subject, something is measure more than once (e.g. before and afer treatment)
+    \item repeated measures ANOVA: within subject, something is measure more than once (e.g. before and after treatment)
     \item blocked design/nested ANOVA: Accounts for variation between different spatial sampling structures (lanes on a illumina sequencing platform) or hierarchical rlevels (patient/organ/tissue sample)
 \end{itemize}
 
@@ -623,10 +635,7 @@ pois.data <- data.frame(c(rep("A", 10000), rep("B",10000)), c(A,B))
 mod.pois <- glm(pois.data[,2] ~pois.data[,1], family = "poisson")
 
 summary(mod.pois)
-
-Call:
-glm(formula = pois.data[, 2] ~ pois.data[, 1], family = "poisson")
-
+'
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
 -1.5451  -1.4161  -0.1824   0.6722   3.9001  
@@ -642,7 +651,7 @@ pois.data[, 1]B 0.174278   0.013547   12.87   <2e-16 ***
 Residual deviance: 23222  on 19998  degrees of freedom
 AIC: 54353
 
-Number of Fisher Scoring iterations: 5
+Number of Fisher Scoring iterations: 5'
 \end{lstlisting}
 
 The data is usually transformed (often logarithmic) when a general linear model is used. Therefore, the coefficients are not straightforward to understand and may need to be back-transformed to make sense. in this case the estimate can be back transformed by exponentiating, exp(Std. error) gives the standard deviation entered in the beginning (nit exactly since this is a random process).
@@ -655,10 +664,7 @@ B <- rbinom(10000, 1, 0.1)
 binom.data <- data.frame(c(rep('A', 10000), rep('B', 10000)), c(A,B))
 mod.binom <- glm(binom.data[,2]~binom.data[,1], family = 'binomial')
 summary(mod.binom)
-
-Call:
-glm(formula = binom.data[, 2] ~ binom.data[, 1], family = "binomial")
-
+'
 Deviance Residuals: 
     Min       1Q   Median       3Q      Max  
 -0.6665  -0.6665  -0.4646  -0.4646   2.1353  
@@ -674,16 +680,15 @@ binom.data[, 1]B -0.78062    0.04142  -18.85   <2e-16 ***
 Residual deviance: 16588  on 19998  degrees of freedom
 AIC: 16592
 
-Number of Fisher Scoring iterations: 4
-
+Number of Fisher Scoring iterations: 4'
 
 Anova(mod.binom)
-
+'
 Analysis of Deviance Table (Type II tests)
 
 Response: binom.data[, 2]
                 LR Chisq Df Pr(>Chisq)    
-binom.data[, 1]   372.34  1  < 2.2e-16 ***
+binom.data[, 1]   372.34  1  < 2.2e-16 ***'
 
 \end{lstlisting}
 
@@ -697,11 +702,11 @@ The first analysis of variance will be conducted with 'pot' as a fixed factor (t
 read.delim("jimson.txt") -> dat#
 fm1a <- aov(LenWid ~ Type * Pot, data = dat)
 summary(fm1a)
-            Df Sum Sq Mean Sq F value   Pr(>F)    
+            'Df Sum Sq Mean Sq F value   Pr(>F)    
 Type         1  7.321   7.321 412.575  < 2e-16 ***
 Pot         15  0.898   0.060   3.373 0.000342 ***
 Type:Pot    15  0.305   0.020   1.146 0.336418    
-Residuals   64  1.136   0.018 
+Residuals   64  1.136   0.018 '
 \end{lstlisting}
 
 The analysis can also be performed with 'pot' as a random effect (the pots are considered randomly selected experimental units representing the true level of replication of the effect of weed 'type')
@@ -709,7 +714,7 @@ The analysis can also be performed with 'pot' as a random effect (the pots are c
 \begin{lstlisting}
 fm1b <- aov(LenWid ~ Type + Error(Pot + Type:Pot), data = dat)
 summary(fm1b)
-
+'
 Error: Pot
           Df Sum Sq Mean Sq F value Pr(>F)
 Residuals 15 0.8977 0.05985               
@@ -720,7 +725,7 @@ Type       1  7.321   7.321     360 6.76e-12 ***
 Residuals 15  0.305   0.020                     
 Error: Within
           Df Sum Sq Mean Sq F value Pr(>F)
-Residuals 64  1.136 0.01774      
+Residuals 64  1.136 0.01774    '  
 \end{lstlisting}
 
 The two models use different error variances and degrees of freedom for calculating the p-value. Still, both models are significant since there were a lot of different pots used. With less pots the species of plant might have been less significant than the choice of pot. This can be caused by slightly different conditions between the pots, but also by chance. The effect can be minimized by using many pots.\par 
@@ -730,11 +735,11 @@ To better understand this effect the dataset will be reduced to only the first t
 dat2 <- subset(dat, (Pot=="16533") | (Pot=="16534"))
 fm2a <- aov(LenWid ~ Type + Pot + Type:Pot, data=dat2)
 summary(fm2a)
-            Df Sum Sq Mean Sq F value   Pr(>F)    
+            'Df Sum Sq Mean Sq F value   Pr(>F)    
 Type         1 0.9352  0.9352 117.636 4.61e-06 ***
 Pot          1 0.0114  0.0114   1.435    0.265    
 Type:Pot     1 0.0200  0.0200   2.517    0.151    
-Residuals    8 0.0636  0.0080   
+Residuals    8 0.0636  0.0080   '
 \end{lstlisting}
 
 The number of observations are considered as each seed, whether the effect is different on the two pots is not considered. The F-values are calculated then as: (Type SS)/(residual SS) (with number of DFs ~ sumber of seeds.
@@ -743,7 +748,7 @@ Then, the pot as a random effect:
 \begin{lstlisting}
 fm2b <- aov(LenWid ~ Type + Error(Pot+ Type:Pot), data=dat2)
 summary(fm2b)
-Error: Pot
+'Error: Pot
           Df  Sum Sq Mean Sq F value Pr(>F)
 Residuals  1 0.01141 0.01141               
 
@@ -754,7 +759,7 @@ Residuals  1 0.0200  0.0200
 ---
 Error: Within
           Df Sum Sq Mean Sq F value Pr(>F)
-Residuals  8 0.0636 0.00795 
+Residuals  8 0.0636 0.00795 '
 \end{lstlisting}
 
 The error term is defined as the variance in the effect (difference between types) among the two pots. The F-ratio is: (Type SS)/(pot:Type SS) with only one (2-1) degree of freedom (DF).\par 
@@ -802,7 +807,7 @@ rho = cov(A, B)/(sqrt(var(A))*sqrt(var(B)))
 
 \begin{lstlisting}
 cor.test(A,B)
-
+'
 	Pearson's product-moment correlation
 
 data:  A and B
@@ -812,7 +817,7 @@ alternative hypothesis: true correlation is not equal to 0
  0.4141286 0.5114782
 sample estimates:
       cor 
-0.4642041  
+0.4642041  '
 \end{lstlisting}
 
 The 95\% confidence interval includes the correlation above. (they should not be exactly the same but here they somehow are?)
@@ -837,7 +842,7 @@ Point 41 seems to be an outlier, it has a way bigger crime rate than any other p
 \begin{lstlisting}
 simple.1b <- lm(log10(violent.crime) ~ police.funding, data = crime)
 summary(simple.1b)
-
+'
 Residuals:
     Min      1Q  Median      3Q     Max 
 -1.0839 -0.2538  0.0644  0.2800  0.6736 
@@ -849,7 +854,7 @@ police.funding 0.010206   0.004069   2.508   0.0156 *  #the mnodel was made less
 
 Residual standard error: 0.3937 on 48 degrees of freedom
 Multiple R-squared:  0.1159,	Adjusted R-squared:  0.09744 
-F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558
+F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558'
 \end{lstlisting}
 
 There is a weak but positive relationship between police funding and crime rate. Cities with problems need to invest more in police, but the relationship is not so strong because investing more should hopefully decrease crime. The regression coefficient (0.010206) is the 'slope', one unit change in police funding changes 0.01 unit in crime. \par 
@@ -862,7 +867,7 @@ number.of.apples <- rnorm(length(crime$violent.crime), 100, 10)
 
 mod2a <-lm(log10(violent.crime)~police.funding, data = crime)
 summary(mod2a)
-Residuals:
+'Residuals:
     Min      1Q  Median      3Q     Max 
 -1.0839 -0.2538  0.0644  0.2800  0.6736 
 
@@ -873,11 +878,11 @@ police.funding 0.010206   0.004069   2.508   0.0156 *
 
 Residual standard error: 0.3937 on 48 degrees of freedom
 Multiple R-squared:  0.1159,	Adjusted R-squared:  0.09744 ##
-F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558
+F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558'
 
 mod2b <- lm(log10(violent.crime)~ police.funding+number.of.oranges+number.of.apples, data = crime)
 summary(mod2b)
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -1.08699 -0.23018  0.08349  0.25198  0.70203 
 
@@ -890,7 +895,7 @@ number.of.apples   0.003354   0.005838   0.575   0.5684
 
 Residual standard error: 0.4002 on 46 degrees of freedom
 Multiple R-squared:  0.1243,	Adjusted R-squared:  0.06722 #the adjusted p-squared is lower than before
-F-statistic: 2.177 on 3 and 46 DF,  p-value: 0.1035 
+F-statistic: 2.177 on 3 and 46 DF,  p-value: 0.1035 '
 \end{lstlisting}
 
 None of the 'bullshit' variables are significantly related. The two models can be compared by \texttt{anova(mod2a, mod2b)}. The p-value tells you whether the 'bullshit' model explained significantly more of the variation in crime.
@@ -901,9 +906,8 @@ If the data can't be log-transformed to remove the outlier, robust regression ca
 \begin{lstlisting}
 library(MASS)
 simple.3 <- rlm(violent.crime~police.funding, data = crime)
-
 summary(simple.3)
-Residuals:
+'Residuals:
     Min      1Q  Median      3Q     Max 
 -597.48 -296.20  -35.56  263.44 2381.51 
 
@@ -920,7 +924,7 @@ Analysis of Deviance Table (Type II tests)
 Response: violent.crime
                Df     F   Pr(>F)   
 police.funding  1 9.153 0.003982 **
-Residuals      48  
+Residuals      48  '
 \end{lstlisting}
 
 The robust regression reduced the influence of the outlier \texttt{plot(simple.3)}.\par 
@@ -928,8 +932,8 @@ The untransformed model has the highest p-value due to point 41. Log transformin
 
 \subsubsection{multiple linear regression}
 
-Look at all five variables of the american crime dataset. In this case, school attendance is the independent variable (x) and crime ist the independent variable (f(x)), because it again makes sense to want to predict crime based on other factors it may depend on. the dataset can be plotted in its entirety (\texttt{plot(crime)}). For the correlation matrix see chapter \ref{crimecorrmatrix}.\par 
-It can be observed that the two variables describing crime are highly correlated. The new variables added (education) are onl weakly negatively correlated to crime. Multiple regression will be used to solve the problem that the education variables are also correlated with each other.\par
+Look at all five variables of the american crime dataset. In this case, school attendance is the independent variable (x) and crime is the independent variable (f(x)), because it again makes sense to want to predict crime based on other factors it may depend on. the dataset can be plotted in its entirety (\texttt{plot(crime)}). For the correlation matrix see chapter \ref{crimecorrmatrix}.\par 
+It can be observed that the two variables describing crime are highly correlated. The new variables added (education) are only weakly negatively correlated to crime. Multiple regression will be used to solve the problem that the education variables are also correlated with each other.\par
 Given that the crime variables and education variables are highly correlated among each other, it may be useful to just analyze one of each together with police funding.
 
 First, two seperate simple regressions will be performed for each explanatory variable on its effect on violent crime, and then the output of that will be compared to a multiple regression including both.
@@ -937,7 +941,7 @@ First, two seperate simple regressions will be performed for each explanatory va
 \begin{lstlisting}
 uni.1a <- lm(log10(violent.crime) ~ police.funding, data = crime)
 summary(uni.1a)
-Residuals:
+'Residuals:
     Min      1Q  Median      3Q     Max 
 -1.0839 -0.2538  0.0644  0.2800  0.6736 
 
@@ -948,12 +952,11 @@ police.funding 0.010206   0.004069   2.508   0.0156 *
 
 Residual standard error: 0.3937 on 48 degrees of freedom
 Multiple R-squared:  0.1159,	Adjusted R-squared:  0.09744 
-F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558
-
+F-statistic:  6.29 on 1 and 48 DF,  p-value: 0.01558'
 
 uni.1b <- lm(log10(violent.crime) ~ perc.highschool, data = crime)
 summary(uni.1b)
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -1.08368 -0.16877  0.04738  0.26701  0.96509 
 
@@ -964,14 +967,14 @@ perc.highschool -0.01282    0.00571  -2.245   0.0294 *
 
 Residual standard error: 0.3983 on 48 degrees of freedom
 Multiple R-squared:  0.095,	Adjusted R-squared:  0.07614 
-F-statistic: 5.039 on 1 and 48 DF,  p-value: 0.02943
+F-statistic: 5.039 on 1 and 48 DF,  p-value: 0.02943'
 \end{lstlisting}
 The correlation of the explanatory variables by themselves is slightly significant (note the estimates, positive correlation for police funding, negative for highschool education).
 
 \begin{lstlisting}
 multi.1 <- lm(log10(violent.crime) ~ police.funding + perc.highschool, data = crime)
 summary(multi.1)
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -0.98269 -0.20166  0.04773  0.26147  0.56757 
 
@@ -983,7 +986,7 @@ perc.highschool -0.014732   0.005328  -2.765  0.00811 **
 
 Residual standard error: 0.369 on 47 degrees of freedom
 Multiple R-squared:  0.2396,	Adjusted R-squared:  0.2072 
-F-statistic: 7.403 on 2 and 47 DF,  p-value: 0.001603
+F-statistic: 7.403 on 2 and 47 DF,  p-value: 0.001603'
 \end{lstlisting}
 
 The p value for both variables becomes more significant in multiple refression. This will be the case when both explanatory variables explain variation in y and they are not very correlated to each other. This is because the p-values are calculated as the amount of variation in y explained by x$_1$ and x$_2$ respectively, relative to the amount of residual variation not explained by the model. This latter variation decreases when we add both varables to the model. \par 
@@ -1000,7 +1003,7 @@ There are problems when we try to use all four variables at once:
 multi.2 <- lm(log10(violent.crime) ~ crime.rate + police.funding + perc.highschool + perc.college, data = crime)
 summary(multi.2)
 
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -0.82198 -0.16288  0.01992  0.17903  0.57435 
 
@@ -1014,7 +1017,7 @@ perc.college     0.0199717  0.0112606   1.774  0.08290 .
 
 Residual standard error: 0.2964 on 45 degrees of freedom
 Multiple R-squared:  0.5301,	Adjusted R-squared:  0.4883 
-F-statistic: 12.69 on 4 and 45 DF,  p-value: 5.4e-07
+F-statistic: 12.69 on 4 and 45 DF,  p-value: 5.4e-07'
 \end{lstlisting}
 
 Police funding seems to be no longer significant.\par 
@@ -1025,7 +1028,7 @@ When there are several highly correlated variables in a dataset, the model might
 multi.3 <- lm(log(violent.crime) ~ police.funding + perc.highschool + perc.college, data = crime)
 summary(multi.3)
 
-Residuals:
+'Residuals:
      Min       1Q   Median       3Q      Max 
 -1.99626 -0.54942  0.06979  0.61166  1.44817 
 
@@ -1038,7 +1041,7 @@ perc.college     0.054791   0.031523   1.738  0.08888 .
 
 Residual standard error: 0.8319 on 46 degrees of freedom
 Multiple R-squared:  0.2864,	Adjusted R-squared:  0.2399 
-F-statistic: 6.155 on 3 and 46 DF,  p-value: 0.001315
+F-statistic: 6.155 on 3 and 46 DF,  p-value: 0.001315'
 \end{lstlisting}
 
 Here there are again problems, the model predicted that college attendance seems to be slightly positively correlated to crime.
@@ -1171,7 +1174,7 @@ Canonical correlation or PLS analyis can be used to study covariation between tw
 \begin{lstlisting}
 lm(log10(violent.crime) ~ police.funding + perc.highschool + perc.college)
 
-Coefficients:
+'Coefficients:
                  		Estimate 		Std. Error 	t value 	Pr(>|t|)    
 (Intercept)      	7.444773   	0.786091   	9.471 	2.23e-12 ***
 police.funding   	0.025558   	0.008677   	2.946  	0.00504 ** 
@@ -1180,15 +1183,14 @@ perc.college     	0.054791   	0.031523   	1.738  	0.08888 .
 
 Residual standard error: 0.8319 on 46 degrees of freedom
 Multiple R-squared:  0.2864,    Adjusted R-squared:  0.2399 
-F-statistic: 6.155 on 3 and 46 DF,  p-value: 0.001315
+F-statistic: 6.155 on 3 and 46 DF,  p-value: 0.001315'
 \end{lstlisting}
-This is a poor model forseveral reasons: There are two crime variables: crime in general (\texttt{crime.rate} and \texttt{violent.crime}) and only one was used. The two educational variables ar highly correlated (using only one would have been better i assume), and the causality is not clearly warranting regression analysis.
+This is a poor model for several reasons: There are two crime variables: crime in general (\texttt{crime.rate} and \texttt{violent.crime}) and only one was used. The two educational variables are highly correlated, which is a problem because all explanatory variables are assumed to be independent, but high school and college education clearly are not. This means that the effect of education is assumed to be a lot higher than it actually is (because two variables are used to describe the effect that is truly caused by one factor). This can also be solved by combining the collinear factors via PCA.\par 
+The causality is not clearly warranting regression analysis, because it is not clear if the crime rate might also cause higher police funding (in addition to the causality of lower police funding potentially leading to higher crime rates).
 
 \begin{lstlisting}
-CCorA(cbind(log10(violent.crime), crime.rate), cbind(police.funding, perc.college, perc.highschool)) 
-#X_1-i ~ X_j-m
-
- Y X
+CCorA(cbind(log10(violent.crime), crime.rate), cbind(police.funding, perc.college, perc.highschool))  #X_1-i ~ X_j-m
+' Y X
 Matrix Ranks 2 3
 
 Pillais trace:  0.47 
@@ -1201,7 +1203,7 @@ CanAxis1 CanAxis2
 0.588     0.35
                    Y | X X | Y
 RDA R squares      0.328  0.20
-adj. RDA R squares 0.284  0.17
+adj. RDA R squares 0.284  0.17'
 \end{lstlisting}
 
 \subsection{MANOVA}
@@ -1235,19 +1237,19 @@ More complex models can be fitted with random and nested effects (like the flowe
 #first: population as a fixed effect
 mod.MAN2 <- manova(cbind(Muscle_depth,Body_depth,Tail_depth) ~ Food*Pop, data=dat )
 summary(mod.MAN2)
-           Df  Pillai approx F num Df den Df    Pr(>F)    
+           'Df  Pillai approx F num Df den Df    Pr(>F)    
 Food        1 0.70009  218.652      3    281 < 2.2e-16 ***
 Pop         7 0.58970    9.891     21    849 < 2.2e-16 ***
 Food:Pop    7 0.17703    2.535     21    849 0.0001782 ***
 Residuals 283  
 #The F-value is even higher here than above probably because the residual variation is smaller (F = individual var./group var.)
 #less degrees of freedom because the model is better
-#the interaction between food and population is weak (the populations dont react differently to food), but all individuals react strongly (F-Value to food very high)
+#the interaction between food and population is weak (the populations dont react differently to food), but all individuals react strongly (F-Value to food very high)'
 
 #second: population as a random effect
 mod.MAN3 <- manova(cbind(Muscle_depth,Body_depth,Tail_depth) ~ Food + Error(Pop + Pop:Food), data=dat )
 summary(mod.MAN3)
-Error: Pop
+'Error: Pop
           Df  Pillai approx F num Df den Df Pr(>F)
 Food       1 0.31117  0.60231      3      4 0.6471 #this is weird, but it does not matter
 Residuals  6                                      
@@ -1260,7 +1262,7 @@ Residuals  7
 
 Error: Within
            Df Pillai approx F num Df den Df Pr(>F)
-Residuals 283 #the same as in the fixed effect, just DF and error terms are different
+Residuals 283 #the same as in the fixed effect, just DF and error terms are different'
 \end{lstlisting}
 
 The first model will have more significant results, but will often be less exact.
@@ -1423,14 +1425,14 @@ The data is 7 morphological traits collected from 8 populations of moor frog tad
 dat <- read.table('tadpole_food.txt', header = T)
 tadpole.pca <- prcomp(dat[,3:9], scale = T)
 summary(tadpole.pca)
-Importance of components:
+'Importance of components:
                           PC1     PC2     PC3     PC4     PC5    PC6     PC7
 Standard deviation     2.4128 0.69766 0.47866 0.42239 0.38967 0.3029 0.20113
 Proportion of Variance 0.8317 0.06953 0.03273 0.02549 0.02169 0.0131 0.00578
-Cumulative Proportion  0.8317 0.90121 0.93394 0.95942 0.98112 0.9942 1.00000
+Cumulative Proportion  0.8317 0.90121 0.93394 0.95942 0.98112 0.9942 1.00000'
 \end{lstlisting}
 
-To explain at least 96\% of variance in the original data 5 out of 7 principal components are needed. The data can be plotted again with the library \texttt{ggfortify}.
+To explain at least 96\% of variance in the original data 5 out of 7 principal components are needed. The data can be plotted again with the library \texttt{ggfortify}. These PCA scores represent the coordinates of each individual object in the ordination. Each loading in each PC represents the weight of each variable when creating the principal components.
 
 
 
@@ -1490,16 +1492,17 @@ The challenge is to find out which number of clusters fits the data best.
 One method is complete linkage clustering. The two samples with the smallest distance in the similarity matrix are selected and merged into a new sample. The distances to the other samples from this new merged sample is the max distance it had to one of the merged samples (distance to merged1: 3, distance to merged2: 5 $\rightarrow$ distance to merged 2 is selected as new distance to the merged point).
 
 \subsubsection{Ordination}
-The typical aim is to reduce multivariante data (for example, many genes) into fewer dimensions used to seperate samples. These can then be used to plot samples (typically in 2D [=bivariate] space) in order to visualize and seek patterns. Similar samples are close together in such bi-plots, and dissimilar samples are placed far apart. \par
+The typical aim is to reduce multivariante data (for example, many genes) into fewer dimensions used to separate samples. These can then be used to plot samples (typically in 2D [=bivariate] space) in order to visualize and seek patterns. Similar samples are close together in such bi-plots, and dissimilar samples are placed far apart. \par
 A very large number of different methods available – only the common ones are mentioned here.
 This works as follows:\par 
 New derived variables (Z$_{ij}$), that we call principal components or axes or dimensions, are created. Methods differ in how these derived variables are attained, but all are constructed from our data, based on either a dissimilarity matrix or the variance-covariance matrix.\par
-\textbf{Principal component analysis}: On the continuous raw data using euklidian distance. Applied to covariance- or correlation matrix based on original data, the Dimensions/axes called ”principal components”. Axes capture maximal variation in the original data and are orthogonal to each other.
+\textbf{Principal component analysis}: On the continuous raw data using euclidean distance. Applied to covariance- or correlation matrix based on original data, the Dimensions/axes called ”principal components”. Axes capture maximal variation in the original data and are orthogonal to each other.
 It is a good starting point to find trends in the data when p>n and can then be used for further analysis.\par
-\textbf{Principal Coordination analysis}: (aka metric multidimensional scaling) More flexible than PCA, can be non-euklidian and non-continuous in creating the similarity matrix, then PCA on that matrix. It maximizes the correlation between dissimilarity matrix and ordination distance $\rightarrow$ ordinates samples along the multivariate dimension(s) that best separate objects. If the dissimilarity matrix is based on Euclidean distance in the original data, eigen-analysis on dissimilarity matrix will generate the same result as a PCA on the original data. It is difficult to get an intuitive feeling how the scores along the PCoA axis to the original data because they are further removed from it.\par
+\textbf{Principal Coordination analysis}: (aka metric multidimensional scaling) More flexible than PCA, can be non-euclidean and non-continuous in creating the similarity matrix, then PCA on that matrix. It maximizes the correlation between dissimilarity matrix and ordination distance $\rightarrow$ ordinates samples along the multivariate dimension(s) that best separate objects. If the dissimilarity matrix is based on Euclidean distance in the original data, eigen-analysis on dissimilarity matrix will generate the same result as a PCA on the original data. It is difficult to get an intuitive feeling how the scores along the PCoA axis to the original data because they are further removed from it.\par
 \textbf{non-metric multidimensional scaling (NMDS)}: similar to PCoA but uses ranked data (1, 2, 3, 100 $\rightarrow$ 1, 2, 3, 4) and is more robust for this reason. It also uses the similarity matrix, the dimenstions are called coordinates or axes. The number of axes needs to be predetermined. It returns 'Stress' (how well the analysis fits the data): $>$0.2 poor, $<$0.05 excellent. The stress decreases when there are more ordination dimensions allowed.\par
-
-All of these Methods are indirect, which means they are naive to underlying casual variables and the grouping/gradients are only based on gene composition/expression data. Directo ordination methods seek covariation between response data and causal explanatory variables.
+\vspace{0.3cm}
+All of these Methods are \textbf{indirect}, which means they are naive to underlying casual variables and the grouping/gradients are only based on gene composition/expression data. \textbf{Direct} ordination methods seek covariation between response data and causal explanatory variables.\par 
+The aim of both methods is still to classify samples so to visualize their differences along a set of reduced number of dimensions capturing most of the variation in the original multivariate space.
 
 \subsubsection{direct gradient analysis}
 The response variables should guide how the PCs are created, not just compared after as in PCA. ”Simple” linear regression between derived variables (dimensions/axes) and e.g. environmental variables can be used, but the power is typically quite low. Better but more complex multivariate methods: Redundancy analysis (RDA, lab 5), Canonical correspondence analysis(CCA), Canonical correlation analysis (CCorA) .\par
@@ -1573,20 +1576,13 @@ Significance tests of assiciations between ordination axes and explanatory varia
 \end{itemize}
 
 
-\subsubsection{ordination: k means clustering (lab 5)}
+\subsubsection{Ordination: k means clustering (lab 5)}
 K-means clustering can be used to determine how many clusters the data likely consists of, it can be run on raw continuous, or distance based data. The clustering algorithm works by ordering data points into k number of clusters by finding groups such that the variance in the distance to the center of each cluster and the respective data is minimized. There are several R-packages needed for the following analysis:
 \begin{lstlisting}
 pkgs <- c("factoextra", "NbClust", "cluster", "fpc", "gridExtra", 'car', 'ggplot2' ...)
 install.packages(pkgs)
-library(factoextra)
-library(NbClust)
-library(cluster)
-library(fpc)
-library(gridExtra)
-library(ggfortify)
-library(vegan)
-library(psych)
-library(ggplot2)
+library(factoextra); library(NbClust); library(cluster); library(psych)
+library(fpc); library(gridExtra); library(ggfortify); library(vegan); library(ggplot2)
 \end{lstlisting}
 The tadpole data set from before is used again here. non-hierarchical k-means clustering is performed.
 
